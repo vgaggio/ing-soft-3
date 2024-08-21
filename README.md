@@ -50,6 +50,21 @@ Paso 3
 En primer lugar, se instaló TextMate.
 
 Luego, se integra el editor con Git mediante los siguientes comandos.
+![Captura De Pantalla 2024 08 20 A La(S) 18.21.14](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.21.14.png)
+
+![Captura De Pantalla 2024 08 20 A La(S) 18.21.49](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.21.49.png)
+
+![Captura De Pantalla 2024 08 20 A La(S) 18.23.56](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.23.56.png)
+
+![Captura De Pantalla 2024 08 20 A La(S) 18.24.47](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.24.47.png)
+
+![Captura De Pantalla 2024 08 20 A La(S) 18.25.35](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.25.35.png)
+
+![Captura De Pantalla 2024 08 20 A La(S) 18.26.29](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.26.29.png)
+
+![Captura De Pantalla 2024 08 20 A La(S) 18.26.39](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.26.39.png)
+
+![Captura De Pantalla 2024 08 20 A La(S) 19.12.27](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2019.12.27.png)
 
 Paso 4
 En primer lugar, se crea un repositorio desde github.com con el archivo Readme.md por defecto.
@@ -133,18 +148,3 @@ Niveles completados.
 
 ![Captura De Pantalla 2024 08 20 A La(S) 23.11.55](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.11.55.png)
 
-![Captura De Pantalla 2024 08 20 A La(S) 18.21.14](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.21.14.png)
-
-![Captura De Pantalla 2024 08 20 A La(S) 18.21.49](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.21.49.png)
-
-![Captura De Pantalla 2024 08 20 A La(S) 18.23.56](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.23.56.png)
-
-![Captura De Pantalla 2024 08 20 A La(S) 18.24.47](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.24.47.png)
-
-![Captura De Pantalla 2024 08 20 A La(S) 18.25.35](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.25.35.png)
-
-![Captura De Pantalla 2024 08 20 A La(S) 18.26.29](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.26.29.png)
-
-![Captura De Pantalla 2024 08 20 A La(S) 18.26.39](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.26.39.png)
-
-![Captura De Pantalla 2024 08 20 A La(S) 19.12.27](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2019.12.27.png)
