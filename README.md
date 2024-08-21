@@ -3,7 +3,7 @@ Practicos materia Ingenieria de Software 3
 
 Paso 1
 Se muestra a continuación que Git está instalado en el dispositivo.
-![Captura De Pantalla 2024 08 20 A La(S) 23.11.29](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.11.29.png)
+![Captura De Pantalla 2024 08 20 A La(S) 23.18.38](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.18.38.png)
 
 
 Paso 2
