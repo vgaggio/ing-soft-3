@@ -2,7 +2,7 @@
 Practicos materia Ingenieria de Software 3
 
 
-![Captura De Pantalla 2024 08 20 A La(S) 18.21.14](mi-repo-local/Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.21.14.png)
+![Captura De Pantalla 2024 08 20 A La(S) 18.21.14](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.21.14.png)
 
 ![Captura De Pantalla 2024 08 20 A La(S) 18.21.49](mi-repo-local/Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2018.21.49.png)
 
