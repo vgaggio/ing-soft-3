@@ -3,10 +3,38 @@ Practicos materia Ingenieria de Software 3
 
 Paso 1
 Se muestra a continuación que Git está instalado en el dispositivo.
+![Captura De Pantalla 2024 08 20 A La(S) 23.18.30](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.18.38ng)
 
 
 Paso 2
 Se muestra a continuación como se creó un nuevo repositorio en un directorio local, se agregó un nuevo archivo llamado "Readme.md" (con una línea de texto) y luego se hizo un commit de los cambios con un mensaje.
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.20.22](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.20.22ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.20.40](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.20.40ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.20.47](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.20.47ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.20.52](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.20.52ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.21.12](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.21.12ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.22.57](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.22.57ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.23.07](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.23.07ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.23.57](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.23.57ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.24.05](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.24.05ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.24.15](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.24.15ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.24.27](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.24.27ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.24.37](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.24.37ng)
+
+![Captura De Pantalla 2024 08 20 A La(S) 23.24.42](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.24.42ng)
+
 
 Comandos utilizados:
 
