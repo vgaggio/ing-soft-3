@@ -101,8 +101,6 @@ Paso 10
 Niveles completados.
 ![Captura De Pantalla 2024 08 20 A La(S) 23.11.29](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.11.29.png)
 
-![Captura De Pantalla 2024 08 20 A La(S) 23.11.35](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.11.35.png)
-
 ![Captura De Pantalla 2024 08 20 A La(S) 23.11.47](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.11.47.png)
 
 ![Captura De Pantalla 2024 08 20 A La(S) 23.11.55](Captura%20de%20pantalla%202024-08-20%20a%20la(s)%2023.11.55.png)
