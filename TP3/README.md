@@ -1,21 +1,35 @@
-#Trabajo Práctico 3 - Introducción a Azure Devops
+# Trabajo Práctico 3 - Introducción a Azure DevOps
 
-##¿Qué es Azure DevOps?
+## ¿Qué es Azure DevOps?
 
 Azure DevOps es un conjunto de herramientas de Microsoft diseñado para facilitar la colaboración en el desarrollo de software. Incluye servicios para la planificación de proyectos, la gestión del código fuente, la integración continua y la entrega continua (CI/CD), la gestión de pruebas y la implementación en la nube. Las principales herramientas dentro de Azure DevOps son Azure Repos (control de versiones), Azure Pipelines (CI/CD), Azure Boards (gestión de proyectos), Azure Test Plans (pruebas) y Azure Artifacts (gestión de paquetes).
 
-##Beneficios de utilizar Azure DevOps:
-#Integración con el ecosistema de Microsoft: Azure DevOps se integra fácilmente con herramientas de Microsoft como Visual Studio, GitHub, y Azure, lo que simplifica la implementación en entornos de desarrollo que ya utilizan estas tecnologías.
+## Beneficios de utilizar Azure DevOps:
 
-#Versatilidad y flexibilidad: Admite una amplia gama de lenguajes de programación, plataformas y entornos de despliegue, lo que permite a los equipos trabajar con sus tecnologías preferidas.
+### Integración con el ecosistema de Microsoft:
 
-#Automatización completa del ciclo de vida del desarrollo: Facilita la implementación de prácticas DevOps como CI/CD, mejorando la eficiencia y reduciendo los errores en el proceso de entrega de software.
+Azure DevOps se integra fácilmente con herramientas de Microsoft como Visual Studio, GitHub, y Azure, lo que simplifica la implementación en entornos de desarrollo que ya utilizan estas tecnologías.
 
-#Escalabilidad: Azure DevOps es adecuado tanto para proyectos pequeños como para grandes organizaciones con múltiples equipos de desarrollo.
+### Versatilidad y flexibilidad:
 
-#Integración con herramientas de terceros: Además de las herramientas de Microsoft, se puede integrar con otras soluciones como Jira, Jenkins, Docker, Kubernetes, entre otros.
+Admite una amplia gama de lenguajes de programación, plataformas y entornos de despliegue, lo que permite a los equipos trabajar con sus tecnologías preferidas.
 
-#Seguridad y control: Ofrece control granular sobre los permisos de acceso y la gestión de código, además de cumplir con estándares de seguridad y cumplimiento de la industria.
+### Automatización completa del ciclo de vida del desarrollo:
+
+Facilita la implementación de prácticas DevOps como CI/CD, mejorando la eficiencia y reduciendo los errores en el proceso de entrega de software.
+
+### Escalabilidad:
+
+Azure DevOps es adecuado tanto para proyectos pequeños como para grandes organizaciones con múltiples equipos de desarrollo.
+
+### Integración con herramientas de terceros:
+
+Además de las herramientas de Microsoft, se puede integrar con otras soluciones como Jira, Jenkins, Docker, Kubernetes, entre otros.
+
+### Seguridad y control:
+
+Ofrece control granular sobre los permisos de acceso y la gestión de código, además de cumplir con estándares de seguridad y cumplimiento de la industria.
+
 
 <img width="711" alt="Captura de pantalla 2024-09-03 a la(s) 15 57 14" src="https://github.com/user-attachments/assets/49c1d4fe-a4f4-46de-8a73-107c3484c492">
 
