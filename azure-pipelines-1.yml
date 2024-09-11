@@ -1,0 +1,22 @@
+trigger:
+- main
+
+pool:
+  vmImage: 'ubuntu-latest'  # Puedes usar también 'windows-latest' o 'macos-latest' según tu necesidad.
+
+steps:
+- task: UseDotNet@2  # Tarea de ejemplo para instalar .NET si trabajas con una aplicación .NET
+  inputs:
+    packageType: 'sdk'
+    version: '6.x'
+    installationPath: $(Agent.ToolsDirectory)/dotnet
+
+- script: |
+    dotnet build --configuration Release  # Comando para compilar tu proyecto
+  displayName: 'Build project'
+
+- task: PublishBuildArtifacts@1  # Tarea de Publish
+  inputs:
+    PathtoPublish: '$(Build.ArtifactStagingDirectory)'  # Directorio de salida que contiene los archivos a publicar
+    ArtifactName: 'drop'  # Nombre del artefacto que se publicará
+    publishLocation: 'Container'  # Tipo de publicación (Contenedor de artefactos en Azure DevOps)
