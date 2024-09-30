@@ -85,7 +85,7 @@ dotnet new xunit -n EmployeeCrudApi.Tests
 
 
 B. Instalar dependencias necesarias
-![Uploading image.png…]()
+<img width="1007" alt="image" src="https://github.com/user-attachments/assets/a5c99048-7f0e-42c0-8a64-3db32da802e1">
 
 
 
@@ -217,6 +217,8 @@ namespace EmployeeCrudApi.Tests
     }
 }
 
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/937a1708-7d9a-4619-9022-c0351e3d060d">
+
 
 D. Renombrar archivo UnitTest1.cs por EmployeeControllerUnitTests.cs
 
@@ -253,6 +255,8 @@ E. Editar el archivo EmployeeCrudApi.Tests/EmployeeCrudApi.Tests.csproj para agr
 
 </Project>
 
+<img width="734" alt="image" src="https://github.com/user-attachments/assets/47c48f56-3672-4881-8d2a-ca7261647459">
+
 
 F. Ejecutar los siguientes comandos para ejecutar nuestras pruebas
 
@@ -261,6 +265,10 @@ dotnet test
 G. Verificar que se hayan ejecutado correctamente las pruebas
 
 
+<img width="183" alt="image" src="https://github.com/user-attachments/assets/de1e821d-c882-42df-9179-5d26876cdd66">
+
+
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/8a8e2b0b-319e-47ce-bd2d-bbe47cce3792">
 
 I. Modificar la cadena de conexión en el archivo appsettings.json para que use un usuario o password incorrecto y recompilar el proyecto EmployeeCrudApi
 
@@ -272,23 +280,39 @@ J. Verificar que nuestro proyecto ya no tiene acceso a la BD navegando a http://
 
 Si probamos la API vemos que nos devuelve un HTPP CODE 500, es decir, no funciona por problemas internos del servidor.
 
+<img width="1003" alt="image" src="https://github.com/user-attachments/assets/3dbc2e3d-5825-4ec8-98f2-68cb4620a7e6">
+
 
 
 K. En la carpeta de nuestro proyecto EmployeeCrudApi.Tests volver a correr las pruebas
 
 dotnet build
 dotnet test
+
+
 L. Verificar que se hayan ejecutado correctamente las pruebas inclusive sin tener acceso a la BD, lo que confirma que es efectivamente un conjunto de pruebas unitarias que no requieren de una dependencia externa para funcionar.
 
+<img width="1041" alt="image" src="https://github.com/user-attachments/assets/88ce2700-c7b6-440a-b3bb-8d182e1b156d">
+
+
+<img width="1041" alt="image" src="https://github.com/user-attachments/assets/29e62a6a-a9b8-4d6f-9d56-0ae09d4c8001">
 
 
 M. Modificar la cadena de conexión en el archivo appsettings.json para que use el usuario y password correcto y recompilar el proyecto EmployeeCrudApi
 
 dotnet build
+
+
+<img width="268" alt="image" src="https://github.com/user-attachments/assets/b3d3b4e2-df6a-42ad-9c1b-270697a5da14">
+
 dotnet run --urls "http://localhost:7150"
+
+<img width="1002" alt="image" src="https://github.com/user-attachments/assets/4671bc3f-a9b2-4241-9828-e42332cd05ac">
 
 
 N. Verificar que nuestro proyecto vuelve a tener acceso a la BD navegando a http://localhost:7150/swagger/index.html y probando uno de los controladores:
+
+<img width="1026" alt="image" src="https://github.com/user-attachments/assets/2e414dbf-97b2-496e-b584-3956da411aab">
 
 
 
@@ -335,6 +359,8 @@ describe('AppComponent', () => {
 
 });
 
+
+<img width="960" alt="image" src="https://github.com/user-attachments/assets/507734a2-b8ce-417a-988d-0674c9f4150d">
 
 C. Creamos el archivo employee.service.spec.ts reemplazando su contenido por:
 
@@ -398,6 +424,8 @@ describe('EmployeeService', () => {
 });
 
 
+<img width="834" alt="image" src="https://github.com/user-attachments/assets/148f48e9-4a17-44b3-bca7-bae2aa1601a4">
+
 D. Editamos el archivo employee.component.spec.ts ubicado en la carpeta employee reemplazando su contenido por:
 
 import { TestBed } from '@angular/core/testing';
@@ -419,6 +447,8 @@ describe('EmployeeComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+<img width="803" alt="image" src="https://github.com/user-attachments/assets/99f90d95-8a40-4a78-b847-14e8a0da7979">
 
 
 E. Editamos el archivo addemployee.component.spec.ts ubicado en la carpeta addemployee reemplazando su contenido por:
@@ -443,6 +473,8 @@ describe('EmployeeComponent', () => {
   });
 });
 
+<img width="843" alt="image" src="https://github.com/user-attachments/assets/27e9a3af-f9ac-44c1-a87a-82bdd8c4dd4e">
+
 
 F. En el directorio raiz de nuestro proyecto EmployeeCrudAngular ejecutamos el comando
 
@@ -454,13 +486,18 @@ En proyectos de Angular, Jasmine se usa para escribir las pruebas, y Karma se en
 G. Vemos que se abre una ventana de Karma con Jasmine en la que nos indica que los tests se ejecutaron correctamente
 
 
+<img width="1276" alt="image" src="https://github.com/user-attachments/assets/482250ea-8ae9-4038-9f4a-ad492641f28a">
+
+
 
 H. Vemos que los tests se ejecutaron correctamente:
 
+<img width="1120" alt="image" src="https://github.com/user-attachments/assets/2d361f34-be3c-4637-83ca-64791eb38761">
 
 
 I. Verificamos que no esté corriendo nuestra API navegando a http://localhost:7150/swagger/index.html y recibiendo esta salida:
 
+<img width="781" alt="image" src="https://github.com/user-attachments/assets/69fd68bf-37c6-4ffa-b4a5-a4e5a8ec2074">
 
 
 J. Los puntos G y H nos indican que se han ejecutado correctamente las pruebas inclusive sin tener acceso a la API, lo que confirma que es efectivamente un conjunto de pruebas unitarias que no requieres de una dependencia externa para funcionar.
@@ -468,9 +505,13 @@ J. Los puntos G y H nos indican que se han ejecutado correctamente las pruebas i
 1.5 Agregamos generación de reporte XML de nuestras pruebas de front.
 Para cuando integremos nuestras pruebas en un pipeline de Build, vamos a necesitar el resultado devuelto por nuestras pruebas para reportarlas junto a las pruebas de back que se reportan automaticamente.
 
+
+
 A. Instalamos dependencia karma-junit-reporter
 
 npm install karma-junit-reporter --save-dev
+
+<img width="522" alt="image" src="https://github.com/user-attachments/assets/97dac914-0796-4d0a-b545-2a517ff0feab">
 
 
 B. En el directorio raiz de nuestro proyecto (al mismo nivel que el archivo angular.json) creamos un archivo karma.conf.js con el siguiente contenido
@@ -500,15 +541,18 @@ module.exports = function (config) {
   });
 };
 
+<img width="559" alt="image" src="https://github.com/user-attachments/assets/63374b4e-a36d-450b-8993-b3eaf9109522">
 
 C. Ejecutamos nuestros test de la siguiente manera:
 
 ng test --karma-config=karma.conf.js --watch=false --browsers ChromeHeadless
+<img width="1220" alt="image" src="https://github.com/user-attachments/assets/19a54454-22cb-41dc-b8b9-f44978461d90">
 
 
 D. Verificamos que se creo un archivo test-result.xml en el directorio test-results que está al mismo nivel que el directorio src
 
- 
+ <img width="779" alt="image" src="https://github.com/user-attachments/assets/3bbf4d93-95f9-42d5-8d2c-d0a97ff8eb62">
+
 
 1.6 Modificamos el código de nuestra API y creamos nuevas pruebas unitarias:
 A. Realizar al menos 5 de las siguientes modificaciones sugeridas al código de la API:
@@ -538,31 +582,42 @@ Asegurar que el nombre del empleado no contenga caracteres especiales o números
 Verificar que el nombre no contenga números, ya que no es común en los nombres de empleados.
 Validar que el nombre tenga un número mínimo de caracteres, por ejemplo, al menos dos caracteres para evitar entradas inválidas como "A".
 En la siguiente imagen, se pueden ver los cambios en la funcion "Create", donde se cumplen las condiciones de arriba. Hay mas cambios en las demas funciones los cuales los puede ver en el archivo EmployeeController.cs.
+<img width="743" alt="image" src="https://github.com/user-attachments/assets/df56a592-9d59-4a21-ada7-152db48c29db">
 
 
 
 B. Crear las pruebas unitarias necesarias para validar las modificaciones realizadas en el código
 
 Cree las pruebas unitarias para validar cada modificacion. En la siguiente imagen, se pueden ver las pruebas unitarias para una validacion y para la correcta creacion de un empleado, el resto de las pruebas las puede ver en el archivo EmployeeControllerUnitTests.cs.
+<img width="624" alt="image" src="https://github.com/user-attachments/assets/24c21a02-ac87-4605-b497-3b8270394bf4">
 
 
 
 Si corremos las pruebas vemos:
 
+<img width="972" alt="image" src="https://github.com/user-attachments/assets/0d3232df-500e-4ce4-b416-d46f79baa3c5">
 
 
 1.7 Modificamos el código de nuestro Front y creamos nuevas pruebas unitarias:
 A. Realizar en el código del front las mismas modificaciones hechas a la API.
 
 En la siguiente imagen, se pueden ver algunas de las modificaciones realizadas, el resto las puede ver en el archivo addemployee.component.ts.
+<img width="966" alt="image" src="https://github.com/user-attachments/assets/db157a73-8935-43bd-8ca4-d8daa11f3bc2">
 
 
 
 B. Las validaciones deben ser realizadas en el front sin llegar a la API, y deben ser mostradas en un toast como por ejemplo https://stackblitz.com/edit/angular12-toastr?file=src%2Fapp%2Fapp.component.ts o https://stackblitz.com/edit/angular-error-toast?file=src%2Fapp%2Fcore%2Frxjsops.ts
 
+
+
+
 Vemos que se uso toastr.
 
-     
+
+     <img width="982" alt="image" src="https://github.com/user-attachments/assets/80384037-64c2-4f2c-972c-51271d0fac42">
+
+<img width="1021" alt="image" src="https://github.com/user-attachments/assets/ff045f69-8248-4899-8234-7fa0f8027341">
+
 
 C. Crear las pruebas unitarias necesarias en el front para validar las modificaciones realizadas en el código del front.
 
@@ -570,10 +625,20 @@ La siguiente imagen muestra algunas de las pruebas unitarias realizadas para val
 
 
 
+<img width="1000" alt="image" src="https://github.com/user-attachments/assets/35735418-2c2d-4de4-b13c-f47f84510b48">
+
+
+
 Si corremos los test con el comando 'ng test', vemos lo siguiente:
+
+<img width="1036" alt="image" src="https://github.com/user-attachments/assets/34a062cf-cccc-484b-8278-916a3bfba03b">
 
 
 
 Vemos que se corrieron las pruebas y pasaron todas. Si ahora lo corremos con el comando 'ng test --karma-config=karma.conf.js --watch=false --browsers ChromeHeadless' vemos:
+<img width="949" alt="image" src="https://github.com/user-attachments/assets/19cfb0db-68bc-4a8f-afe0-37573df3aa69">
+
+
+<img width="1041" alt="image" src="https://github.com/user-attachments/assets/c20f5bad-bab0-4e52-aef9-a4f7a9b1ffbe">
 
  
