@@ -1,0 +1,10 @@
+2024-09-30T02:59:10.2691785Z ##[section]Starting: Checkout vgaggio/ing-soft-3@main to s
+2024-09-30T02:59:10.2695040Z ==============================================================================
+2024-09-30T02:59:10.2695202Z Task         : Get sources
+2024-09-30T02:59:10.2695302Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2024-09-30T02:59:10.2695448Z Version      : 1.0.0
+2024-09-30T02:59:10.2695542Z Author       : Microsoft
+2024-09-30T02:59:10.2695628Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2024-09-30T02:59:10.2695759Z ==============================================================================
+2024-09-30T02:59:10.5838132Z Cleaning any cached credential from repository: vgaggio/ing-soft-3 (GitHub)
+2024-09-30T02:59:10.5925346Z ##[section]Finishing: Checkout vgaggio/ing-soft-3@main to s

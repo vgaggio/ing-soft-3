@@ -1,0 +1,325 @@
+2024-09-30T02:59:05.4241168Z ##[section]Starting: Job
+2024-09-30T02:59:05.7082264Z ##[section]Starting: Initialize job
+2024-09-30T02:59:05.7084249Z Agent name: 'Hosted Agent'
+2024-09-30T02:59:05.7084641Z Agent machine name: 'fv-az422-171'
+2024-09-30T02:59:05.7084832Z Current agent version: '3.244.1'
+2024-09-30T02:59:05.7114222Z ##[group]Operating System
+2024-09-30T02:59:05.7114433Z Ubuntu
+2024-09-30T02:59:05.7114561Z 22.04.5
+2024-09-30T02:59:05.7114669Z LTS
+2024-09-30T02:59:05.7114806Z ##[endgroup]
+2024-09-30T02:59:05.7114959Z ##[group]Runner Image
+2024-09-30T02:59:05.7115116Z Image: ubuntu-22.04
+2024-09-30T02:59:05.7115280Z Version: 20240922.1.0
+2024-09-30T02:59:05.7115576Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240922.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-09-30T02:59:05.7115919Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240922.1
+2024-09-30T02:59:05.7116139Z ##[endgroup]
+2024-09-30T02:59:05.7116303Z ##[group]Runner Image Provisioner
+2024-09-30T02:59:05.7116795Z 2.0.384.1
+2024-09-30T02:59:05.7116949Z ##[endgroup]
+2024-09-30T02:59:05.7121003Z Current image version: '20240922.1.0'
+2024-09-30T02:59:05.8132109Z Agent running as: 'vsts'
+2024-09-30T02:59:05.8172970Z Prepare build directory.
+2024-09-30T02:59:05.8451192Z Set build variables.
+2024-09-30T02:59:05.8486168Z Download all required tasks.
+2024-09-30T02:59:05.8660003Z Downloading task: CmdLine (2.244.3)
+2024-09-30T02:59:06.8806227Z Checking job knob settings.
+2024-09-30T02:59:06.8809578Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES) 
+2024-09-30T02:59:06.8809957Z    Knob: AgentToolsDirectory = /opt/hostedtoolcache Source: ${AGENT_TOOLSDIRECTORY} 
+2024-09-30T02:59:06.8811366Z    Knob: UseGitLongPaths = true Source: $(USE_GIT_LONG_PATHS) 
+2024-09-30T02:59:06.8812322Z    Knob: AgentPerflog = /home/vsts/perflog Source: ${VSTS_AGENT_PERFLOG} 
+2024-09-30T02:59:06.8813700Z    Knob: EnableIssueSourceValidation = true Source: $(ENABLE_ISSUE_SOURCE_VALIDATION) 
+2024-09-30T02:59:06.8814576Z    Knob: AgentEnablePipelineArtifactLargeChunkSize = true Source: $(AGENT_ENABLE_PIPELINEARTIFACT_LARGE_CHUNK_SIZE) 
+2024-09-30T02:59:06.8817105Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT) 
+2024-09-30T02:59:06.8817896Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC) 
+2024-09-30T02:59:06.8818438Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC_LOG) 
+2024-09-30T02:59:06.8818951Z    Knob: ProcessHandlerTelemetry = true Source: $(AZP_75787_ENABLE_COLLECT) 
+2024-09-30T02:59:06.8819553Z    Knob: UseNewNodeHandlerTelemetry = True Source: $(DistributedTask.Agent.USENEWNODEHANDLERTELEMETRY) 
+2024-09-30T02:59:06.8820116Z    Knob: ProcessHandlerEnableNewLogic = true Source: $(AZP_75787_ENABLE_NEW_PH_LOGIC) 
+2024-09-30T02:59:06.8820914Z    Knob: EnableResourceMonitorDebugOutput = true Source: $(AZP_ENABLE_RESOURCE_MONITOR_DEBUG_OUTPUT) 
+2024-09-30T02:59:06.8821528Z    Knob: EnableResourceUtilizationWarnings = true Source: $(AZP_ENABLE_RESOURCE_UTILIZATION_WARNINGS) 
+2024-09-30T02:59:06.8822325Z    Knob: IgnoreVSTSTaskLib = true Source: $(AZP_AGENT_IGNORE_VSTSTASKLIB) 
+2024-09-30T02:59:06.8822822Z    Knob: FailJobWhenAgentDies = true Source: $(FAIL_JOB_WHEN_AGENT_DIES) 
+2024-09-30T02:59:06.8823480Z    Knob: CheckForTaskDeprecation = true Source: $(AZP_AGENT_CHECK_FOR_TASK_DEPRECATION) 
+2024-09-30T02:59:06.8824212Z    Knob: CheckIfTaskNodeRunnerIsDeprecated = False Source: $(DistributedTask.Agent.CheckIfTaskNodeRunnerIsDeprecated) 
+2024-09-30T02:59:06.8825151Z    Knob: LogTaskNameInUserAgent = true Source: $(AZP_AGENT_LOG_TASKNAME_IN_USERAGENT) 
+2024-09-30T02:59:06.8825706Z    Knob: UseFetchFilterInCheckoutTask = true Source: $(AGENT_USE_FETCH_FILTER_IN_CHECKOUT_TASK) 
+2024-09-30T02:59:06.8826514Z    Knob: Rosetta2Warning = true Source: $(ROSETTA2_WARNING) 
+2024-09-30T02:59:06.8827485Z Finished checking job knob settings.
+2024-09-30T02:59:06.9123635Z Start tracking orphan processes.
+2024-09-30T02:59:06.9388401Z ##[section]Finishing: Initialize job
+2024-09-30T02:59:06.9575640Z ##[section]Async Command Start: DetectDockerContainer
+2024-09-30T02:59:06.9576033Z ##[section]Async Command End: DetectDockerContainer
+2024-09-30T02:59:06.9577173Z ##[section]Async Command Start: DetectDockerContainer
+2024-09-30T02:59:06.9577532Z ##[section]Async Command End: DetectDockerContainer
+2024-09-30T02:59:06.9778527Z ##[section]Starting: Checkout vgaggio/ing-soft-3@main to s
+2024-09-30T02:59:07.0009430Z ==============================================================================
+2024-09-30T02:59:07.0010109Z Task         : Get sources
+2024-09-30T02:59:07.0010434Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2024-09-30T02:59:07.0010778Z Version      : 1.0.0
+2024-09-30T02:59:07.0011070Z Author       : Microsoft
+2024-09-30T02:59:07.0011463Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2024-09-30T02:59:07.0011666Z ==============================================================================
+2024-09-30T02:59:07.4615400Z Syncing repository: vgaggio/ing-soft-3 (GitHub)
+2024-09-30T02:59:07.5447032Z ##[command]git version
+2024-09-30T02:59:07.6065822Z git version 2.46.1
+2024-09-30T02:59:07.6098127Z ##[command]git lfs version
+2024-09-30T02:59:07.6648070Z git-lfs/3.5.1 (GitHub; linux amd64; go 1.21.8)
+2024-09-30T02:59:07.6825181Z ##[command]git init "/home/vsts/work/1/s"
+2024-09-30T02:59:07.6894134Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-09-30T02:59:07.6897895Z hint: is subject to change. To configure the initial branch name to use in all
+2024-09-30T02:59:07.6898274Z hint: of your new repositories, which will suppress this warning, call:
+2024-09-30T02:59:07.6898547Z hint:
+2024-09-30T02:59:07.6898950Z hint: 	git config --global init.defaultBranch <name>
+2024-09-30T02:59:07.6899205Z hint:
+2024-09-30T02:59:07.6899572Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-09-30T02:59:07.6900033Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-09-30T02:59:07.6900312Z hint:
+2024-09-30T02:59:07.6900590Z hint: 	git branch -m <name>
+2024-09-30T02:59:07.6906215Z Initialized empty Git repository in /home/vsts/work/1/s/.git/
+2024-09-30T02:59:07.6926386Z ##[command]git remote add origin https://github.com/vgaggio/ing-soft-3
+2024-09-30T02:59:07.6985133Z ##[command]git config gc.auto 0
+2024-09-30T02:59:07.7026825Z ##[command]git config core.longpaths true
+2024-09-30T02:59:07.7057834Z ##[command]git config --get-all http.https://github.com/vgaggio/ing-soft-3.extraheader
+2024-09-30T02:59:07.7102148Z ##[command]git config --get-all http.extraheader
+2024-09-30T02:59:07.7158508Z ##[command]git config --get-regexp .*extraheader
+2024-09-30T02:59:07.7194797Z ##[command]git config --get-all http.proxy
+2024-09-30T02:59:07.7202687Z ##[command]git config http.version HTTP/1.1
+2024-09-30T02:59:07.7806884Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1  +c35262604ed3a6cb945d51f0e379068b68082da3:refs/remotes/origin/c35262604ed3a6cb945d51f0e379068b68082da3
+2024-09-30T02:59:07.9189984Z remote: Enumerating objects: 84, done.        
+2024-09-30T02:59:07.9192137Z remote: Counting objects:   1% (1/84)        
+2024-09-30T02:59:07.9192492Z remote: Counting objects:   2% (2/84)        
+2024-09-30T02:59:07.9192832Z remote: Counting objects:   3% (3/84)        
+2024-09-30T02:59:07.9193156Z remote: Counting objects:   4% (4/84)        
+2024-09-30T02:59:07.9193477Z remote: Counting objects:   5% (5/84)        
+2024-09-30T02:59:07.9193798Z remote: Counting objects:   7% (6/84)        
+2024-09-30T02:59:07.9194118Z remote: Counting objects:   8% (7/84)        
+2024-09-30T02:59:07.9194440Z remote: Counting objects:   9% (8/84)        
+2024-09-30T02:59:07.9194844Z remote: Counting objects:  10% (9/84)        
+2024-09-30T02:59:07.9195130Z remote: Counting objects:  11% (10/84)        
+2024-09-30T02:59:07.9195594Z remote: Counting objects:  13% (11/84)        
+2024-09-30T02:59:07.9195881Z remote: Counting objects:  14% (12/84)        
+2024-09-30T02:59:07.9196167Z remote: Counting objects:  15% (13/84)        
+2024-09-30T02:59:07.9196625Z remote: Counting objects:  16% (14/84)        
+2024-09-30T02:59:07.9196917Z remote: Counting objects:  17% (15/84)        
+2024-09-30T02:59:07.9197329Z remote: Counting objects:  19% (16/84)        
+2024-09-30T02:59:07.9197627Z remote: Counting objects:  20% (17/84)        
+2024-09-30T02:59:07.9197913Z remote: Counting objects:  21% (18/84)        
+2024-09-30T02:59:07.9198195Z remote: Counting objects:  22% (19/84)        
+2024-09-30T02:59:07.9198479Z remote: Counting objects:  23% (20/84)        
+2024-09-30T02:59:07.9198761Z remote: Counting objects:  25% (21/84)        
+2024-09-30T02:59:07.9199044Z remote: Counting objects:  26% (22/84)        
+2024-09-30T02:59:07.9199327Z remote: Counting objects:  27% (23/84)        
+2024-09-30T02:59:07.9199615Z remote: Counting objects:  28% (24/84)        
+2024-09-30T02:59:07.9199898Z remote: Counting objects:  29% (25/84)        
+2024-09-30T02:59:07.9200182Z remote: Counting objects:  30% (26/84)        
+2024-09-30T02:59:07.9200463Z remote: Counting objects:  32% (27/84)        
+2024-09-30T02:59:07.9200744Z remote: Counting objects:  33% (28/84)        
+2024-09-30T02:59:07.9201031Z remote: Counting objects:  34% (29/84)        
+2024-09-30T02:59:07.9201311Z remote: Counting objects:  35% (30/84)        
+2024-09-30T02:59:07.9201594Z remote: Counting objects:  36% (31/84)        
+2024-09-30T02:59:07.9201877Z remote: Counting objects:  38% (32/84)        
+2024-09-30T02:59:07.9202159Z remote: Counting objects:  39% (33/84)        
+2024-09-30T02:59:07.9202442Z remote: Counting objects:  40% (34/84)        
+2024-09-30T02:59:07.9202723Z remote: Counting objects:  41% (35/84)        
+2024-09-30T02:59:07.9203005Z remote: Counting objects:  42% (36/84)        
+2024-09-30T02:59:07.9203288Z remote: Counting objects:  44% (37/84)        
+2024-09-30T02:59:07.9203575Z remote: Counting objects:  45% (38/84)        
+2024-09-30T02:59:07.9204008Z remote: Counting objects:  46% (39/84)        
+2024-09-30T02:59:07.9204290Z remote: Counting objects:  47% (40/84)        
+2024-09-30T02:59:07.9204573Z remote: Counting objects:  48% (41/84)        
+2024-09-30T02:59:07.9204858Z remote: Counting objects:  50% (42/84)        
+2024-09-30T02:59:07.9205142Z remote: Counting objects:  51% (43/84)        
+2024-09-30T02:59:07.9205426Z remote: Counting objects:  52% (44/84)        
+2024-09-30T02:59:07.9205708Z remote: Counting objects:  53% (45/84)        
+2024-09-30T02:59:07.9205988Z remote: Counting objects:  54% (46/84)        
+2024-09-30T02:59:07.9206269Z remote: Counting objects:  55% (47/84)        
+2024-09-30T02:59:07.9206644Z remote: Counting objects:  57% (48/84)        
+2024-09-30T02:59:07.9206929Z remote: Counting objects:  58% (49/84)        
+2024-09-30T02:59:07.9207212Z remote: Counting objects:  59% (50/84)        
+2024-09-30T02:59:07.9207500Z remote: Counting objects:  60% (51/84)        
+2024-09-30T02:59:07.9207782Z remote: Counting objects:  61% (52/84)        
+2024-09-30T02:59:07.9208067Z remote: Counting objects:  63% (53/84)        
+2024-09-30T02:59:07.9208354Z remote: Counting objects:  64% (54/84)        
+2024-09-30T02:59:07.9208638Z remote: Counting objects:  65% (55/84)        
+2024-09-30T02:59:07.9208923Z remote: Counting objects:  66% (56/84)        
+2024-09-30T02:59:07.9209208Z remote: Counting objects:  67% (57/84)        
+2024-09-30T02:59:07.9209494Z remote: Counting objects:  69% (58/84)        
+2024-09-30T02:59:07.9209777Z remote: Counting objects:  70% (59/84)        
+2024-09-30T02:59:07.9210059Z remote: Counting objects:  71% (60/84)        
+2024-09-30T02:59:07.9210342Z remote: Counting objects:  72% (61/84)        
+2024-09-30T02:59:07.9210623Z remote: Counting objects:  73% (62/84)        
+2024-09-30T02:59:07.9210906Z remote: Counting objects:  75% (63/84)        
+2024-09-30T02:59:07.9211188Z remote: Counting objects:  76% (64/84)        
+2024-09-30T02:59:07.9211567Z remote: Counting objects:  77% (65/84)        
+2024-09-30T02:59:07.9211850Z remote: Counting objects:  78% (66/84)        
+2024-09-30T02:59:07.9212130Z remote: Counting objects:  79% (67/84)        
+2024-09-30T02:59:07.9212410Z remote: Counting objects:  80% (68/84)        
+2024-09-30T02:59:07.9212756Z remote: Counting objects:  82% (69/84)        
+2024-09-30T02:59:07.9213049Z remote: Counting objects:  83% (70/84)        
+2024-09-30T02:59:07.9213332Z remote: Counting objects:  84% (71/84)        
+2024-09-30T02:59:07.9213614Z remote: Counting objects:  85% (72/84)        
+2024-09-30T02:59:07.9213898Z remote: Counting objects:  86% (73/84)        
+2024-09-30T02:59:07.9214181Z remote: Counting objects:  88% (74/84)        
+2024-09-30T02:59:07.9214466Z remote: Counting objects:  89% (75/84)        
+2024-09-30T02:59:07.9214747Z remote: Counting objects:  90% (76/84)        
+2024-09-30T02:59:07.9215030Z remote: Counting objects:  91% (77/84)        
+2024-09-30T02:59:07.9215318Z remote: Counting objects:  92% (78/84)        
+2024-09-30T02:59:07.9215602Z remote: Counting objects:  94% (79/84)        
+2024-09-30T02:59:07.9215887Z remote: Counting objects:  95% (80/84)        
+2024-09-30T02:59:07.9216170Z remote: Counting objects:  96% (81/84)        
+2024-09-30T02:59:07.9217356Z remote: Counting objects:  97% (82/84)        
+2024-09-30T02:59:07.9217690Z remote: Counting objects:  98% (83/84)        
+2024-09-30T02:59:07.9217977Z remote: Counting objects: 100% (84/84)        
+2024-09-30T02:59:07.9218275Z remote: Counting objects: 100% (84/84), done.        
+2024-09-30T02:59:07.9218579Z remote: Compressing objects:   1% (1/77)        
+2024-09-30T02:59:07.9219209Z remote: Compressing objects:   2% (2/77)        
+2024-09-30T02:59:07.9224660Z remote: Compressing objects:   3% (3/77)        
+2024-09-30T02:59:07.9225202Z remote: Compressing objects:   5% (4/77)        
+2024-09-30T02:59:07.9225867Z remote: Compressing objects:   6% (5/77)        
+2024-09-30T02:59:07.9636920Z remote: Compressing objects:   7% (6/77)        
+2024-09-30T02:59:07.9638362Z remote: Compressing objects:   9% (7/77)        
+2024-09-30T02:59:07.9639281Z remote: Compressing objects:  10% (8/77)        
+2024-09-30T02:59:07.9640205Z remote: Compressing objects:  11% (9/77)        
+2024-09-30T02:59:07.9641095Z remote: Compressing objects:  12% (10/77)        
+2024-09-30T02:59:07.9641949Z remote: Compressing objects:  14% (11/77)        
+2024-09-30T02:59:07.9642855Z remote: Compressing objects:  15% (12/77)        
+2024-09-30T02:59:07.9643658Z remote: Compressing objects:  16% (13/77)        
+2024-09-30T02:59:07.9644494Z remote: Compressing objects:  18% (14/77)        
+2024-09-30T02:59:07.9645326Z remote: Compressing objects:  19% (15/77)        
+2024-09-30T02:59:07.9646160Z remote: Compressing objects:  20% (16/77)        
+2024-09-30T02:59:07.9646893Z remote: Compressing objects:  22% (17/77)        
+2024-09-30T02:59:08.1894048Z remote: Compressing objects:  23% (18/77)        
+2024-09-30T02:59:08.1898881Z remote: Compressing objects:  24% (19/77)        
+2024-09-30T02:59:08.1899190Z remote: Compressing objects:  25% (20/77)        
+2024-09-30T02:59:08.1899433Z remote: Compressing objects:  27% (21/77)        
+2024-09-30T02:59:08.1899673Z remote: Compressing objects:  28% (22/77)        
+2024-09-30T02:59:08.1901395Z remote: Compressing objects:  29% (23/77)        
+2024-09-30T02:59:08.1901662Z remote: Compressing objects:  31% (24/77)        
+2024-09-30T02:59:08.1901901Z remote: Compressing objects:  32% (25/77)        
+2024-09-30T02:59:08.1902137Z remote: Compressing objects:  33% (26/77)        
+2024-09-30T02:59:08.1902372Z remote: Compressing objects:  35% (27/77)        
+2024-09-30T02:59:08.1902611Z remote: Compressing objects:  36% (28/77)        
+2024-09-30T02:59:08.1902847Z remote: Compressing objects:  37% (29/77)        
+2024-09-30T02:59:08.1903083Z remote: Compressing objects:  38% (30/77)        
+2024-09-30T02:59:08.1903612Z remote: Compressing objects:  40% (31/77)        
+2024-09-30T02:59:08.1904144Z remote: Compressing objects:  41% (32/77)        
+2024-09-30T02:59:08.1904381Z remote: Compressing objects:  42% (33/77)        
+2024-09-30T02:59:08.1904613Z remote: Compressing objects:  44% (34/77)        
+2024-09-30T02:59:08.1904881Z remote: Compressing objects:  45% (35/77)        
+2024-09-30T02:59:08.4162870Z remote: Compressing objects:  46% (36/77)        
+2024-09-30T02:59:08.4163494Z remote: Compressing objects:  48% (37/77)        
+2024-09-30T02:59:08.4166694Z remote: Compressing objects:  49% (38/77)        
+2024-09-30T02:59:08.4167964Z remote: Compressing objects:  50% (39/77)        
+2024-09-30T02:59:08.4168742Z remote: Compressing objects:  51% (40/77)        
+2024-09-30T02:59:08.4169255Z remote: Compressing objects:  53% (41/77)        
+2024-09-30T02:59:08.4169555Z remote: Compressing objects:  54% (42/77)        
+2024-09-30T02:59:08.4169839Z remote: Compressing objects:  55% (43/77)        
+2024-09-30T02:59:08.4170167Z remote: Compressing objects:  57% (44/77)        
+2024-09-30T02:59:08.4170469Z remote: Compressing objects:  58% (45/77)        
+2024-09-30T02:59:08.4172841Z remote: Compressing objects:  59% (46/77)        
+2024-09-30T02:59:08.4173627Z remote: Compressing objects:  61% (47/77)        
+2024-09-30T02:59:08.4175863Z remote: Compressing objects:  62% (48/77)        
+2024-09-30T02:59:08.4177089Z remote: Compressing objects:  63% (49/77)        
+2024-09-30T02:59:08.4177527Z remote: Compressing objects:  64% (50/77)        
+2024-09-30T02:59:08.4178127Z remote: Compressing objects:  66% (51/77)        
+2024-09-30T02:59:08.4178429Z remote: Compressing objects:  67% (52/77)        
+2024-09-30T02:59:08.4178708Z remote: Compressing objects:  68% (53/77)        
+2024-09-30T02:59:08.4178983Z remote: Compressing objects:  70% (54/77)        
+2024-09-30T02:59:08.4179253Z remote: Compressing objects:  71% (55/77)        
+2024-09-30T02:59:08.4180298Z remote: Compressing objects:  72% (56/77)        
+2024-09-30T02:59:08.4180718Z remote: Compressing objects:  74% (57/77)        
+2024-09-30T02:59:08.4542890Z remote: Compressing objects:  75% (58/77)        
+2024-09-30T02:59:08.4543401Z remote: Compressing objects:  76% (59/77)        
+2024-09-30T02:59:08.4543731Z remote: Compressing objects:  77% (60/77)        
+2024-09-30T02:59:08.4545215Z remote: Compressing objects:  79% (61/77)        
+2024-09-30T02:59:08.4545503Z remote: Compressing objects:  80% (62/77)        
+2024-09-30T02:59:08.4545795Z remote: Compressing objects:  81% (63/77)        
+2024-09-30T02:59:08.4546073Z remote: Compressing objects:  83% (64/77)        
+2024-09-30T02:59:08.4546348Z remote: Compressing objects:  84% (65/77)        
+2024-09-30T02:59:08.4546792Z remote: Compressing objects:  85% (66/77)        
+2024-09-30T02:59:08.4557643Z remote: Compressing objects:  87% (67/77)        
+2024-09-30T02:59:08.4560090Z remote: Compressing objects:  88% (68/77)        
+2024-09-30T02:59:08.4561154Z remote: Compressing objects:  89% (69/77)        
+2024-09-30T02:59:08.4561868Z remote: Compressing objects:  90% (70/77)        
+2024-09-30T02:59:08.4567292Z remote: Compressing objects:  92% (71/77)        
+2024-09-30T02:59:08.4567951Z remote: Compressing objects:  93% (72/77)        
+2024-09-30T02:59:08.4568861Z remote: Compressing objects:  94% (73/77)        
+2024-09-30T02:59:08.4570383Z remote: Compressing objects:  96% (74/77)        
+2024-09-30T02:59:08.4571120Z remote: Compressing objects:  97% (75/77)        
+2024-09-30T02:59:08.4572210Z remote: Compressing objects:  98% (76/77)        
+2024-09-30T02:59:08.4573732Z remote: Compressing objects: 100% (77/77)        
+2024-09-30T02:59:08.4575267Z remote: Compressing objects: 100% (77/77), done.        
+2024-09-30T02:59:09.4198058Z remote: Total 84 (delta 2), reused 75 (delta 2), pack-reused 0 (from 0)        
+2024-09-30T02:59:09.4397566Z From https://github.com/vgaggio/ing-soft-3
+2024-09-30T02:59:09.4402554Z  * [new ref]         c35262604ed3a6cb945d51f0e379068b68082da3 -> origin/c35262604ed3a6cb945d51f0e379068b68082da3
+2024-09-30T02:59:09.4773093Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1  +c35262604ed3a6cb945d51f0e379068b68082da3
+2024-09-30T02:59:09.6389829Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2024-09-30T02:59:09.6442437Z From https://github.com/vgaggio/ing-soft-3
+2024-09-30T02:59:09.6446173Z  * branch            c35262604ed3a6cb945d51f0e379068b68082da3 -> FETCH_HEAD
+2024-09-30T02:59:09.6869582Z ##[command]git checkout --progress --force refs/remotes/origin/c35262604ed3a6cb945d51f0e379068b68082da3
+2024-09-30T02:59:09.7561492Z Note: switching to 'refs/remotes/origin/c35262604ed3a6cb945d51f0e379068b68082da3'.
+2024-09-30T02:59:09.7583818Z 
+2024-09-30T02:59:09.7587700Z You are in 'detached HEAD' state. You can look around, make experimental
+2024-09-30T02:59:09.7588045Z changes and commit them, and you can discard any commits you make in this
+2024-09-30T02:59:09.7588372Z state without impacting any branches by switching back to a branch.
+2024-09-30T02:59:09.7588524Z 
+2024-09-30T02:59:09.7588788Z If you want to create a new branch to retain commits you create, you may
+2024-09-30T02:59:09.7589194Z do so (now or later) by using -c with the switch command. Example:
+2024-09-30T02:59:09.7589342Z 
+2024-09-30T02:59:09.7589613Z   git switch -c <new-branch-name>
+2024-09-30T02:59:09.7589718Z 
+2024-09-30T02:59:09.7589930Z Or undo this operation with:
+2024-09-30T02:59:09.7590034Z 
+2024-09-30T02:59:09.7590225Z   git switch -
+2024-09-30T02:59:09.7590322Z 
+2024-09-30T02:59:09.7590605Z Turn off this advice by setting config variable advice.detachedHead to false
+2024-09-30T02:59:09.7590753Z 
+2024-09-30T02:59:09.7590973Z HEAD is now at c352626 Se agrego Readme
+2024-09-30T02:59:09.7671082Z ##[section]Finishing: Checkout vgaggio/ing-soft-3@main to s
+2024-09-30T02:59:09.7695941Z ##[section]Starting: Run a one-line script
+2024-09-30T02:59:09.7701220Z ==============================================================================
+2024-09-30T02:59:09.7701391Z Task         : Command line
+2024-09-30T02:59:09.7701492Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2024-09-30T02:59:09.7701653Z Version      : 2.244.3
+2024-09-30T02:59:09.7701737Z Author       : Microsoft Corporation
+2024-09-30T02:59:09.7701833Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2024-09-30T02:59:09.7701994Z ==============================================================================
+2024-09-30T02:59:10.0851416Z Generating script.
+2024-09-30T02:59:10.0858017Z Script contents:
+2024-09-30T02:59:10.0860653Z echo Hello, world!
+2024-09-30T02:59:10.0863244Z ========================== Starting Command Output ===========================
+2024-09-30T02:59:10.0871993Z [command]/usr/bin/bash --noprofile --norc /home/vsts/work/_temp/202c7faf-4310-48ec-8636-b24bc8597951.sh
+2024-09-30T02:59:10.0929799Z Hello, world!
+2024-09-30T02:59:10.0939589Z 
+2024-09-30T02:59:10.1013049Z ##[section]Finishing: Run a one-line script
+2024-09-30T02:59:10.1033888Z ##[section]Starting: Run a multi-line script
+2024-09-30T02:59:10.1039235Z ==============================================================================
+2024-09-30T02:59:10.1039387Z Task         : Command line
+2024-09-30T02:59:10.1039493Z Description  : Run a command line script using Bash on Linux and macOS and cmd.exe on Windows
+2024-09-30T02:59:10.1039638Z Version      : 2.244.3
+2024-09-30T02:59:10.1039735Z Author       : Microsoft Corporation
+2024-09-30T02:59:10.1039832Z Help         : https://docs.microsoft.com/azure/devops/pipelines/tasks/utility/command-line
+2024-09-30T02:59:10.1039972Z ==============================================================================
+2024-09-30T02:59:10.2537519Z Generating script.
+2024-09-30T02:59:10.2545060Z ========================== Starting Command Output ===========================
+2024-09-30T02:59:10.2558771Z [command]/usr/bin/bash --noprofile --norc /home/vsts/work/_temp/e3736fd8-5de3-4afe-8dbb-c18c6b976c59.sh
+2024-09-30T02:59:10.2605828Z Add other tasks to build, test, and deploy your project.
+2024-09-30T02:59:10.2615670Z See https://aka.ms/yaml
+2024-09-30T02:59:10.2617927Z 
+2024-09-30T02:59:10.2669904Z ##[section]Finishing: Run a multi-line script
+2024-09-30T02:59:10.2691800Z ##[section]Starting: Checkout vgaggio/ing-soft-3@main to s
+2024-09-30T02:59:10.2695052Z ==============================================================================
+2024-09-30T02:59:10.2695207Z Task         : Get sources
+2024-09-30T02:59:10.2695310Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2024-09-30T02:59:10.2695453Z Version      : 1.0.0
+2024-09-30T02:59:10.2695547Z Author       : Microsoft
+2024-09-30T02:59:10.2695635Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2024-09-30T02:59:10.2695780Z ==============================================================================
+2024-09-30T02:59:10.5838170Z Cleaning any cached credential from repository: vgaggio/ing-soft-3 (GitHub)
+2024-09-30T02:59:10.5925364Z ##[section]Finishing: Checkout vgaggio/ing-soft-3@main to s
+2024-09-30T02:59:10.6023993Z ##[section]Starting: Finalize Job
+2024-09-30T02:59:10.6053886Z Cleaning up task key
+2024-09-30T02:59:10.6054887Z Start cleaning up orphan processes.
+2024-09-30T02:59:10.6729042Z ##[section]Finishing: Finalize Job
+2024-09-30T02:59:10.6788660Z ##[section]Finishing: Job

@@ -1,0 +1,49 @@
+2024-09-30T02:59:05.7082232Z ##[section]Starting: Initialize job
+2024-09-30T02:59:05.7084235Z Agent name: 'Hosted Agent'
+2024-09-30T02:59:05.7084634Z Agent machine name: 'fv-az422-171'
+2024-09-30T02:59:05.7084827Z Current agent version: '3.244.1'
+2024-09-30T02:59:05.7114196Z ##[group]Operating System
+2024-09-30T02:59:05.7114427Z Ubuntu
+2024-09-30T02:59:05.7114557Z 22.04.5
+2024-09-30T02:59:05.7114665Z LTS
+2024-09-30T02:59:05.7114800Z ##[endgroup]
+2024-09-30T02:59:05.7114953Z ##[group]Runner Image
+2024-09-30T02:59:05.7115110Z Image: ubuntu-22.04
+2024-09-30T02:59:05.7115274Z Version: 20240922.1.0
+2024-09-30T02:59:05.7115556Z Included Software: https://github.com/actions/runner-images/blob/ubuntu22/20240922.1/images/ubuntu/Ubuntu2204-Readme.md
+2024-09-30T02:59:05.7115904Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu22%2F20240922.1
+2024-09-30T02:59:05.7116133Z ##[endgroup]
+2024-09-30T02:59:05.7116296Z ##[group]Runner Image Provisioner
+2024-09-30T02:59:05.7116788Z 2.0.384.1
+2024-09-30T02:59:05.7116926Z ##[endgroup]
+2024-09-30T02:59:05.7120980Z Current image version: '20240922.1.0'
+2024-09-30T02:59:05.8132074Z Agent running as: 'vsts'
+2024-09-30T02:59:05.8172943Z Prepare build directory.
+2024-09-30T02:59:05.8451157Z Set build variables.
+2024-09-30T02:59:05.8486139Z Download all required tasks.
+2024-09-30T02:59:05.8659988Z Downloading task: CmdLine (2.244.3)
+2024-09-30T02:59:06.8806183Z Checking job knob settings.
+2024-09-30T02:59:06.8809541Z    Knob: DockerActionRetries = true Source: $(VSTSAGENT_DOCKER_ACTION_RETRIES) 
+2024-09-30T02:59:06.8809946Z    Knob: AgentToolsDirectory = /opt/hostedtoolcache Source: ${AGENT_TOOLSDIRECTORY} 
+2024-09-30T02:59:06.8811352Z    Knob: UseGitLongPaths = true Source: $(USE_GIT_LONG_PATHS) 
+2024-09-30T02:59:06.8812312Z    Knob: AgentPerflog = /home/vsts/perflog Source: ${VSTS_AGENT_PERFLOG} 
+2024-09-30T02:59:06.8813689Z    Knob: EnableIssueSourceValidation = true Source: $(ENABLE_ISSUE_SOURCE_VALIDATION) 
+2024-09-30T02:59:06.8814554Z    Knob: AgentEnablePipelineArtifactLargeChunkSize = true Source: $(AGENT_ENABLE_PIPELINEARTIFACT_LARGE_CHUNK_SIZE) 
+2024-09-30T02:59:06.8817090Z    Knob: ContinueAfterCancelProcessTreeKillAttempt = true Source: $(VSTSAGENT_CONTINUE_AFTER_CANCEL_PROCESSTREEKILL_ATTEMPT) 
+2024-09-30T02:59:06.8817881Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC) 
+2024-09-30T02:59:06.8818428Z    Knob: ProcessHandlerSecureArguments = false Source: $(AZP_75787_ENABLE_NEW_LOGIC_LOG) 
+2024-09-30T02:59:06.8818941Z    Knob: ProcessHandlerTelemetry = true Source: $(AZP_75787_ENABLE_COLLECT) 
+2024-09-30T02:59:06.8819541Z    Knob: UseNewNodeHandlerTelemetry = True Source: $(DistributedTask.Agent.USENEWNODEHANDLERTELEMETRY) 
+2024-09-30T02:59:06.8820106Z    Knob: ProcessHandlerEnableNewLogic = true Source: $(AZP_75787_ENABLE_NEW_PH_LOGIC) 
+2024-09-30T02:59:06.8820903Z    Knob: EnableResourceMonitorDebugOutput = true Source: $(AZP_ENABLE_RESOURCE_MONITOR_DEBUG_OUTPUT) 
+2024-09-30T02:59:06.8821485Z    Knob: EnableResourceUtilizationWarnings = true Source: $(AZP_ENABLE_RESOURCE_UTILIZATION_WARNINGS) 
+2024-09-30T02:59:06.8822315Z    Knob: IgnoreVSTSTaskLib = true Source: $(AZP_AGENT_IGNORE_VSTSTASKLIB) 
+2024-09-30T02:59:06.8822812Z    Knob: FailJobWhenAgentDies = true Source: $(FAIL_JOB_WHEN_AGENT_DIES) 
+2024-09-30T02:59:06.8823470Z    Knob: CheckForTaskDeprecation = true Source: $(AZP_AGENT_CHECK_FOR_TASK_DEPRECATION) 
+2024-09-30T02:59:06.8824199Z    Knob: CheckIfTaskNodeRunnerIsDeprecated = False Source: $(DistributedTask.Agent.CheckIfTaskNodeRunnerIsDeprecated) 
+2024-09-30T02:59:06.8825141Z    Knob: LogTaskNameInUserAgent = true Source: $(AZP_AGENT_LOG_TASKNAME_IN_USERAGENT) 
+2024-09-30T02:59:06.8825695Z    Knob: UseFetchFilterInCheckoutTask = true Source: $(AGENT_USE_FETCH_FILTER_IN_CHECKOUT_TASK) 
+2024-09-30T02:59:06.8826499Z    Knob: Rosetta2Warning = true Source: $(ROSETTA2_WARNING) 
+2024-09-30T02:59:06.8827478Z Finished checking job knob settings.
+2024-09-30T02:59:06.9123605Z Start tracking orphan processes.
+2024-09-30T02:59:06.9388214Z ##[section]Finishing: Initialize job

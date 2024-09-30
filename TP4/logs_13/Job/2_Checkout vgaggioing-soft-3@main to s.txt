@@ -1,0 +1,225 @@
+2024-09-30T02:59:06.9778501Z ##[section]Starting: Checkout vgaggio/ing-soft-3@main to s
+2024-09-30T02:59:07.0009385Z ==============================================================================
+2024-09-30T02:59:07.0010097Z Task         : Get sources
+2024-09-30T02:59:07.0010420Z Description  : Get sources from a repository. Supports Git, TfsVC, and SVN repositories.
+2024-09-30T02:59:07.0010771Z Version      : 1.0.0
+2024-09-30T02:59:07.0011061Z Author       : Microsoft
+2024-09-30T02:59:07.0011450Z Help         : [More Information](https://go.microsoft.com/fwlink/?LinkId=798199)
+2024-09-30T02:59:07.0011643Z ==============================================================================
+2024-09-30T02:59:07.4615355Z Syncing repository: vgaggio/ing-soft-3 (GitHub)
+2024-09-30T02:59:07.5446989Z ##[command]git version
+2024-09-30T02:59:07.6065789Z git version 2.46.1
+2024-09-30T02:59:07.6098101Z ##[command]git lfs version
+2024-09-30T02:59:07.6648032Z git-lfs/3.5.1 (GitHub; linux amd64; go 1.21.8)
+2024-09-30T02:59:07.6825089Z ##[command]git init "/home/vsts/work/1/s"
+2024-09-30T02:59:07.6894104Z hint: Using 'master' as the name for the initial branch. This default branch name
+2024-09-30T02:59:07.6897874Z hint: is subject to change. To configure the initial branch name to use in all
+2024-09-30T02:59:07.6898264Z hint: of your new repositories, which will suppress this warning, call:
+2024-09-30T02:59:07.6898542Z hint:
+2024-09-30T02:59:07.6898941Z hint: 	git config --global init.defaultBranch <name>
+2024-09-30T02:59:07.6899200Z hint:
+2024-09-30T02:59:07.6899563Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2024-09-30T02:59:07.6900023Z hint: 'development'. The just-created branch can be renamed via this command:
+2024-09-30T02:59:07.6900307Z hint:
+2024-09-30T02:59:07.6900583Z hint: 	git branch -m <name>
+2024-09-30T02:59:07.6906190Z Initialized empty Git repository in /home/vsts/work/1/s/.git/
+2024-09-30T02:59:07.6926360Z ##[command]git remote add origin https://github.com/vgaggio/ing-soft-3
+2024-09-30T02:59:07.6985095Z ##[command]git config gc.auto 0
+2024-09-30T02:59:07.7026804Z ##[command]git config core.longpaths true
+2024-09-30T02:59:07.7057805Z ##[command]git config --get-all http.https://github.com/vgaggio/ing-soft-3.extraheader
+2024-09-30T02:59:07.7102123Z ##[command]git config --get-all http.extraheader
+2024-09-30T02:59:07.7158481Z ##[command]git config --get-regexp .*extraheader
+2024-09-30T02:59:07.7194774Z ##[command]git config --get-all http.proxy
+2024-09-30T02:59:07.7202673Z ##[command]git config http.version HTTP/1.1
+2024-09-30T02:59:07.7806834Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1  +c35262604ed3a6cb945d51f0e379068b68082da3:refs/remotes/origin/c35262604ed3a6cb945d51f0e379068b68082da3
+2024-09-30T02:59:07.9189957Z remote: Enumerating objects: 84, done.        
+2024-09-30T02:59:07.9192122Z remote: Counting objects:   1% (1/84)        
+2024-09-30T02:59:07.9192470Z remote: Counting objects:   2% (2/84)        
+2024-09-30T02:59:07.9192824Z remote: Counting objects:   3% (3/84)        
+2024-09-30T02:59:07.9193149Z remote: Counting objects:   4% (4/84)        
+2024-09-30T02:59:07.9193469Z remote: Counting objects:   5% (5/84)        
+2024-09-30T02:59:07.9193790Z remote: Counting objects:   7% (6/84)        
+2024-09-30T02:59:07.9194111Z remote: Counting objects:   8% (7/84)        
+2024-09-30T02:59:07.9194433Z remote: Counting objects:   9% (8/84)        
+2024-09-30T02:59:07.9194838Z remote: Counting objects:  10% (9/84)        
+2024-09-30T02:59:07.9195123Z remote: Counting objects:  11% (10/84)        
+2024-09-30T02:59:07.9195586Z remote: Counting objects:  13% (11/84)        
+2024-09-30T02:59:07.9195874Z remote: Counting objects:  14% (12/84)        
+2024-09-30T02:59:07.9196160Z remote: Counting objects:  15% (13/84)        
+2024-09-30T02:59:07.9196617Z remote: Counting objects:  16% (14/84)        
+2024-09-30T02:59:07.9196910Z remote: Counting objects:  17% (15/84)        
+2024-09-30T02:59:07.9197195Z remote: Counting objects:  19% (16/84)        
+2024-09-30T02:59:07.9197620Z remote: Counting objects:  20% (17/84)        
+2024-09-30T02:59:07.9197905Z remote: Counting objects:  21% (18/84)        
+2024-09-30T02:59:07.9198188Z remote: Counting objects:  22% (19/84)        
+2024-09-30T02:59:07.9198472Z remote: Counting objects:  23% (20/84)        
+2024-09-30T02:59:07.9198755Z remote: Counting objects:  25% (21/84)        
+2024-09-30T02:59:07.9199037Z remote: Counting objects:  26% (22/84)        
+2024-09-30T02:59:07.9199320Z remote: Counting objects:  27% (23/84)        
+2024-09-30T02:59:07.9199609Z remote: Counting objects:  28% (24/84)        
+2024-09-30T02:59:07.9199891Z remote: Counting objects:  29% (25/84)        
+2024-09-30T02:59:07.9200175Z remote: Counting objects:  30% (26/84)        
+2024-09-30T02:59:07.9200456Z remote: Counting objects:  32% (27/84)        
+2024-09-30T02:59:07.9200737Z remote: Counting objects:  33% (28/84)        
+2024-09-30T02:59:07.9201020Z remote: Counting objects:  34% (29/84)        
+2024-09-30T02:59:07.9201305Z remote: Counting objects:  35% (30/84)        
+2024-09-30T02:59:07.9201587Z remote: Counting objects:  36% (31/84)        
+2024-09-30T02:59:07.9201870Z remote: Counting objects:  38% (32/84)        
+2024-09-30T02:59:07.9202152Z remote: Counting objects:  39% (33/84)        
+2024-09-30T02:59:07.9202435Z remote: Counting objects:  40% (34/84)        
+2024-09-30T02:59:07.9202716Z remote: Counting objects:  41% (35/84)        
+2024-09-30T02:59:07.9202998Z remote: Counting objects:  42% (36/84)        
+2024-09-30T02:59:07.9203281Z remote: Counting objects:  44% (37/84)        
+2024-09-30T02:59:07.9203568Z remote: Counting objects:  45% (38/84)        
+2024-09-30T02:59:07.9204001Z remote: Counting objects:  46% (39/84)        
+2024-09-30T02:59:07.9204283Z remote: Counting objects:  47% (40/84)        
+2024-09-30T02:59:07.9204566Z remote: Counting objects:  48% (41/84)        
+2024-09-30T02:59:07.9204851Z remote: Counting objects:  50% (42/84)        
+2024-09-30T02:59:07.9205132Z remote: Counting objects:  51% (43/84)        
+2024-09-30T02:59:07.9205420Z remote: Counting objects:  52% (44/84)        
+2024-09-30T02:59:07.9205701Z remote: Counting objects:  53% (45/84)        
+2024-09-30T02:59:07.9205982Z remote: Counting objects:  54% (46/84)        
+2024-09-30T02:59:07.9206263Z remote: Counting objects:  55% (47/84)        
+2024-09-30T02:59:07.9206635Z remote: Counting objects:  57% (48/84)        
+2024-09-30T02:59:07.9206922Z remote: Counting objects:  58% (49/84)        
+2024-09-30T02:59:07.9207206Z remote: Counting objects:  59% (50/84)        
+2024-09-30T02:59:07.9207493Z remote: Counting objects:  60% (51/84)        
+2024-09-30T02:59:07.9207775Z remote: Counting objects:  61% (52/84)        
+2024-09-30T02:59:07.9208060Z remote: Counting objects:  63% (53/84)        
+2024-09-30T02:59:07.9208347Z remote: Counting objects:  64% (54/84)        
+2024-09-30T02:59:07.9208631Z remote: Counting objects:  65% (55/84)        
+2024-09-30T02:59:07.9208914Z remote: Counting objects:  66% (56/84)        
+2024-09-30T02:59:07.9209201Z remote: Counting objects:  67% (57/84)        
+2024-09-30T02:59:07.9209487Z remote: Counting objects:  69% (58/84)        
+2024-09-30T02:59:07.9209771Z remote: Counting objects:  70% (59/84)        
+2024-09-30T02:59:07.9210053Z remote: Counting objects:  71% (60/84)        
+2024-09-30T02:59:07.9210335Z remote: Counting objects:  72% (61/84)        
+2024-09-30T02:59:07.9210616Z remote: Counting objects:  73% (62/84)        
+2024-09-30T02:59:07.9210899Z remote: Counting objects:  75% (63/84)        
+2024-09-30T02:59:07.9211181Z remote: Counting objects:  76% (64/84)        
+2024-09-30T02:59:07.9211559Z remote: Counting objects:  77% (65/84)        
+2024-09-30T02:59:07.9211843Z remote: Counting objects:  78% (66/84)        
+2024-09-30T02:59:07.9212123Z remote: Counting objects:  79% (67/84)        
+2024-09-30T02:59:07.9212404Z remote: Counting objects:  80% (68/84)        
+2024-09-30T02:59:07.9212685Z remote: Counting objects:  82% (69/84)        
+2024-09-30T02:59:07.9213042Z remote: Counting objects:  83% (70/84)        
+2024-09-30T02:59:07.9213325Z remote: Counting objects:  84% (71/84)        
+2024-09-30T02:59:07.9213607Z remote: Counting objects:  85% (72/84)        
+2024-09-30T02:59:07.9213890Z remote: Counting objects:  86% (73/84)        
+2024-09-30T02:59:07.9214174Z remote: Counting objects:  88% (74/84)        
+2024-09-30T02:59:07.9214458Z remote: Counting objects:  89% (75/84)        
+2024-09-30T02:59:07.9214740Z remote: Counting objects:  90% (76/84)        
+2024-09-30T02:59:07.9215023Z remote: Counting objects:  91% (77/84)        
+2024-09-30T02:59:07.9215311Z remote: Counting objects:  92% (78/84)        
+2024-09-30T02:59:07.9215595Z remote: Counting objects:  94% (79/84)        
+2024-09-30T02:59:07.9215880Z remote: Counting objects:  95% (80/84)        
+2024-09-30T02:59:07.9216163Z remote: Counting objects:  96% (81/84)        
+2024-09-30T02:59:07.9217343Z remote: Counting objects:  97% (82/84)        
+2024-09-30T02:59:07.9217674Z remote: Counting objects:  98% (83/84)        
+2024-09-30T02:59:07.9217970Z remote: Counting objects: 100% (84/84)        
+2024-09-30T02:59:07.9218267Z remote: Counting objects: 100% (84/84), done.        
+2024-09-30T02:59:07.9218571Z remote: Compressing objects:   1% (1/77)        
+2024-09-30T02:59:07.9219201Z remote: Compressing objects:   2% (2/77)        
+2024-09-30T02:59:07.9224639Z remote: Compressing objects:   3% (3/77)        
+2024-09-30T02:59:07.9225193Z remote: Compressing objects:   5% (4/77)        
+2024-09-30T02:59:07.9225857Z remote: Compressing objects:   6% (5/77)        
+2024-09-30T02:59:07.9636889Z remote: Compressing objects:   7% (6/77)        
+2024-09-30T02:59:07.9638350Z remote: Compressing objects:   9% (7/77)        
+2024-09-30T02:59:07.9639271Z remote: Compressing objects:  10% (8/77)        
+2024-09-30T02:59:07.9640195Z remote: Compressing objects:  11% (9/77)        
+2024-09-30T02:59:07.9641085Z remote: Compressing objects:  12% (10/77)        
+2024-09-30T02:59:07.9641928Z remote: Compressing objects:  14% (11/77)        
+2024-09-30T02:59:07.9642846Z remote: Compressing objects:  15% (12/77)        
+2024-09-30T02:59:07.9643649Z remote: Compressing objects:  16% (13/77)        
+2024-09-30T02:59:07.9644485Z remote: Compressing objects:  18% (14/77)        
+2024-09-30T02:59:07.9645317Z remote: Compressing objects:  19% (15/77)        
+2024-09-30T02:59:07.9646151Z remote: Compressing objects:  20% (16/77)        
+2024-09-30T02:59:07.9646884Z remote: Compressing objects:  22% (17/77)        
+2024-09-30T02:59:08.1894000Z remote: Compressing objects:  23% (18/77)        
+2024-09-30T02:59:08.1898849Z remote: Compressing objects:  24% (19/77)        
+2024-09-30T02:59:08.1899182Z remote: Compressing objects:  25% (20/77)        
+2024-09-30T02:59:08.1899425Z remote: Compressing objects:  27% (21/77)        
+2024-09-30T02:59:08.1899666Z remote: Compressing objects:  28% (22/77)        
+2024-09-30T02:59:08.1901382Z remote: Compressing objects:  29% (23/77)        
+2024-09-30T02:59:08.1901641Z remote: Compressing objects:  31% (24/77)        
+2024-09-30T02:59:08.1901894Z remote: Compressing objects:  32% (25/77)        
+2024-09-30T02:59:08.1902130Z remote: Compressing objects:  33% (26/77)        
+2024-09-30T02:59:08.1902365Z remote: Compressing objects:  35% (27/77)        
+2024-09-30T02:59:08.1902604Z remote: Compressing objects:  36% (28/77)        
+2024-09-30T02:59:08.1902840Z remote: Compressing objects:  37% (29/77)        
+2024-09-30T02:59:08.1903076Z remote: Compressing objects:  38% (30/77)        
+2024-09-30T02:59:08.1903602Z remote: Compressing objects:  40% (31/77)        
+2024-09-30T02:59:08.1904136Z remote: Compressing objects:  41% (32/77)        
+2024-09-30T02:59:08.1904374Z remote: Compressing objects:  42% (33/77)        
+2024-09-30T02:59:08.1904606Z remote: Compressing objects:  44% (34/77)        
+2024-09-30T02:59:08.1904874Z remote: Compressing objects:  45% (35/77)        
+2024-09-30T02:59:08.4162825Z remote: Compressing objects:  46% (36/77)        
+2024-09-30T02:59:08.4163189Z remote: Compressing objects:  48% (37/77)        
+2024-09-30T02:59:08.4166650Z remote: Compressing objects:  49% (38/77)        
+2024-09-30T02:59:08.4167942Z remote: Compressing objects:  50% (39/77)        
+2024-09-30T02:59:08.4168731Z remote: Compressing objects:  51% (40/77)        
+2024-09-30T02:59:08.4169238Z remote: Compressing objects:  53% (41/77)        
+2024-09-30T02:59:08.4169547Z remote: Compressing objects:  54% (42/77)        
+2024-09-30T02:59:08.4169831Z remote: Compressing objects:  55% (43/77)        
+2024-09-30T02:59:08.4170144Z remote: Compressing objects:  57% (44/77)        
+2024-09-30T02:59:08.4170442Z remote: Compressing objects:  58% (45/77)        
+2024-09-30T02:59:08.4172828Z remote: Compressing objects:  59% (46/77)        
+2024-09-30T02:59:08.4173599Z remote: Compressing objects:  61% (47/77)        
+2024-09-30T02:59:08.4175833Z remote: Compressing objects:  62% (48/77)        
+2024-09-30T02:59:08.4177077Z remote: Compressing objects:  63% (49/77)        
+2024-09-30T02:59:08.4177503Z remote: Compressing objects:  64% (50/77)        
+2024-09-30T02:59:08.4178105Z remote: Compressing objects:  66% (51/77)        
+2024-09-30T02:59:08.4178420Z remote: Compressing objects:  67% (52/77)        
+2024-09-30T02:59:08.4178700Z remote: Compressing objects:  68% (53/77)        
+2024-09-30T02:59:08.4178975Z remote: Compressing objects:  70% (54/77)        
+2024-09-30T02:59:08.4179246Z remote: Compressing objects:  71% (55/77)        
+2024-09-30T02:59:08.4180286Z remote: Compressing objects:  72% (56/77)        
+2024-09-30T02:59:08.4180709Z remote: Compressing objects:  74% (57/77)        
+2024-09-30T02:59:08.4542859Z remote: Compressing objects:  75% (58/77)        
+2024-09-30T02:59:08.4543392Z remote: Compressing objects:  76% (59/77)        
+2024-09-30T02:59:08.4543722Z remote: Compressing objects:  77% (60/77)        
+2024-09-30T02:59:08.4545202Z remote: Compressing objects:  79% (61/77)        
+2024-09-30T02:59:08.4545496Z remote: Compressing objects:  80% (62/77)        
+2024-09-30T02:59:08.4545773Z remote: Compressing objects:  81% (63/77)        
+2024-09-30T02:59:08.4546065Z remote: Compressing objects:  83% (64/77)        
+2024-09-30T02:59:08.4546341Z remote: Compressing objects:  84% (65/77)        
+2024-09-30T02:59:08.4546782Z remote: Compressing objects:  85% (66/77)        
+2024-09-30T02:59:08.4557614Z remote: Compressing objects:  87% (67/77)        
+2024-09-30T02:59:08.4560072Z remote: Compressing objects:  88% (68/77)        
+2024-09-30T02:59:08.4561143Z remote: Compressing objects:  89% (69/77)        
+2024-09-30T02:59:08.4561858Z remote: Compressing objects:  90% (70/77)        
+2024-09-30T02:59:08.4567268Z remote: Compressing objects:  92% (71/77)        
+2024-09-30T02:59:08.4567942Z remote: Compressing objects:  93% (72/77)        
+2024-09-30T02:59:08.4568849Z remote: Compressing objects:  94% (73/77)        
+2024-09-30T02:59:08.4570369Z remote: Compressing objects:  96% (74/77)        
+2024-09-30T02:59:08.4571107Z remote: Compressing objects:  97% (75/77)        
+2024-09-30T02:59:08.4572168Z remote: Compressing objects:  98% (76/77)        
+2024-09-30T02:59:08.4573718Z remote: Compressing objects: 100% (77/77)        
+2024-09-30T02:59:08.4575251Z remote: Compressing objects: 100% (77/77), done.        
+2024-09-30T02:59:09.4198020Z remote: Total 84 (delta 2), reused 75 (delta 2), pack-reused 0 (from 0)        
+2024-09-30T02:59:09.4397539Z From https://github.com/vgaggio/ing-soft-3
+2024-09-30T02:59:09.4402537Z  * [new ref]         c35262604ed3a6cb945d51f0e379068b68082da3 -> origin/c35262604ed3a6cb945d51f0e379068b68082da3
+2024-09-30T02:59:09.4773064Z ##[command]git --config-env=http.extraheader=env_var_http.extraheader fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin --depth=1  +c35262604ed3a6cb945d51f0e379068b68082da3
+2024-09-30T02:59:09.6389799Z remote: Total 0 (delta 0), reused 0 (delta 0), pack-reused 0 (from 0)        
+2024-09-30T02:59:09.6442417Z From https://github.com/vgaggio/ing-soft-3
+2024-09-30T02:59:09.6445974Z  * branch            c35262604ed3a6cb945d51f0e379068b68082da3 -> FETCH_HEAD
+2024-09-30T02:59:09.6869558Z ##[command]git checkout --progress --force refs/remotes/origin/c35262604ed3a6cb945d51f0e379068b68082da3
+2024-09-30T02:59:09.7561459Z Note: switching to 'refs/remotes/origin/c35262604ed3a6cb945d51f0e379068b68082da3'.
+2024-09-30T02:59:09.7583786Z 
+2024-09-30T02:59:09.7587684Z You are in 'detached HEAD' state. You can look around, make experimental
+2024-09-30T02:59:09.7588038Z changes and commit them, and you can discard any commits you make in this
+2024-09-30T02:59:09.7588365Z state without impacting any branches by switching back to a branch.
+2024-09-30T02:59:09.7588520Z 
+2024-09-30T02:59:09.7588781Z If you want to create a new branch to retain commits you create, you may
+2024-09-30T02:59:09.7589187Z do so (now or later) by using -c with the switch command. Example:
+2024-09-30T02:59:09.7589338Z 
+2024-09-30T02:59:09.7589607Z   git switch -c <new-branch-name>
+2024-09-30T02:59:09.7589714Z 
+2024-09-30T02:59:09.7589924Z Or undo this operation with:
+2024-09-30T02:59:09.7590024Z 
+2024-09-30T02:59:09.7590221Z   git switch -
+2024-09-30T02:59:09.7590318Z 
+2024-09-30T02:59:09.7590597Z Turn off this advice by setting config variable advice.detachedHead to false
+2024-09-30T02:59:09.7590750Z 
+2024-09-30T02:59:09.7590967Z HEAD is now at c352626 Se agrego Readme
+2024-09-30T02:59:09.7671069Z ##[section]Finishing: Checkout vgaggio/ing-soft-3@main to s
