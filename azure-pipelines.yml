@@ -2,13 +2,18 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: DotNetCoreCLI@2
+- task: NodeTool@0
   inputs:
-    command: 'build'
-    projects: '**/*.csproj'
+    versionSpec: '16.x'
+  displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build --prod
+  displayName: 'Install npm dependencies and build Angular app'
 
 - task: PublishPipelineArtifact@1
   inputs:
     targetPath: '$(Build.ArtifactStagingDirectory)'
-    artifactName: 'drop'
+    artifactName: 'angular-drop'
     publishLocation: 'Pipeline'
