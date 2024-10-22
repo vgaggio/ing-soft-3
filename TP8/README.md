@@ -385,7 +385,7 @@ Además, se creó una nueva variable de entorno mediante la GUI de Azure llamada
 
 Luego de ejecutar el pipeline, dentro de Azure Portal se creó un nuevo recurso ACI.
 
-Imagen Paso 11a
+![image](https://github.com/user-attachments/assets/a9dfe13c-a864-460e-b8bb-56ae64fd3a39)
 
 Al navegar a la URL del contenedor, se muestra que el mismo está correctamente conectado al backend debido a que se ven los datos almacenados en la DB, además de contener el log con la URL extraída de la variable global de Azure Pipeline.
 
