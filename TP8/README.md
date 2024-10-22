@@ -435,8 +435,7 @@ Imagen Paso 13a
 
 Una vez aprobado el despliegue y finalizada esta etapa, dentro del grupo de recursos en Azure Portal se observa que ambos ACI fueron creados exitosamente.
 
-Imagen Paso 13b
-
+gaggio-crud-api-prod.eastus.azurecontainer.io/api/Employee/GetAll
 Al navegar a la URL provista por el contenedor de Front, se puede ver que los datos cargan correctamente y que los mismos están siendo obtenidos del contenedor PROD.
 
-Imagen Paso 13c
+<img width="822" alt="image" src="https://github.com/user-attachments/assets/bb7e9bae-60de-4065-be8c-d04284ce476b">
