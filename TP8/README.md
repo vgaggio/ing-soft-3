@@ -67,7 +67,7 @@ Luego de publicar los artefactos del frontend, se agrega el siguiente código de
 Estos publican los Dockerfiles anteriormente creados, lo cual permite que estén disponibles para ser utilizados en etapas posteriores.
 
 ### Paso 4
-Se agrega una service connection para el manejo de recursos a Azure Portal llamada "AzureResourceManager" como se indica en instructivo 5.2.
+Al no contar se agrega una service connection para el manejo de recursos a Azure Portal llamada "AzureResourceManager" como se indica en instructivo 5.2.
 
 
 <img width="1512" alt="Captura de pantalla 2024-10-19 a la(s) 12 29 35" src="https://github.com/user-attachments/assets/e6f94e03-c441-4bec-b926-e21ffdbf6b33">
