@@ -50,7 +50,7 @@ Agregar tareas para crear un recurso Azure Container Instances que levante un co
                 # Establecer variables de entorno
                 az webapp config appsettings set --name $(WebAppApiNameContainersQA) --resource-group $(ResourceGroupName) \
                   --settings ConnectionStrings__DefaultConnection="$(cnn-string-qa)" \
-
+```
 Primero, creamos un plan de linux en Azure.
 <img width="1512" alt="Captura de pantalla 2024-10-20 a la(s) 22 08 49" src="https://github.com/user-attachments/assets/dd35f6f3-0bcb-4314-83c0-00bcf3d24fd8">
 
