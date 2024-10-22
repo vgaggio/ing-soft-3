@@ -105,7 +105,7 @@ Se agrega un nuevo job a la etapa anteriormente creada que permite realizar el d
                 --settings API_URL="$(api_url_as_qa)" \
 Nuevamente, esto crea un recurso dentro de Azure Portal.
 
-Imagen Paso 2
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/654bde28-cf32-40a5-9daa-79d40dce4185">
 
 Paso 3
 Se agregan las variables necesarias para esta etapa considerando que debe haber un entorno de QA y un entorno de Producción.
@@ -128,7 +128,11 @@ Se agregan las variables necesarias para esta etapa considerando que debe haber 
   # FRONT (Prod)
   frontAppServiceProd: 'chattas-as-crud-front-prod'
   front_url_as_prod: 'https://$(frontAppServiceProd).azurewebsites.net'
-Nota: durante esta etapa se utilizan otras variables definidas en prácticos anteriores que no fueron incluidas en esta sección.
+
+<img width="600" alt="image" src="https://github.com/user-attachments/assets/5bc0285b-23f5-411b-a51c-4066b70266fc">
+
+
+<img width="1121" alt="image" src="https://github.com/user-attachments/assets/4a3af1c7-b2f2-40aa-a188-d84dd25ce9fc">
 
 Paso 4
 Se agrega un nuevo job a la etapa para ejecutar las pruebas E2E de Cypress en el entorno de QA de los Azure App Service.
@@ -155,6 +159,10 @@ Se agrega un nuevo job a la etapa para ejecutar las pruebas E2E de Cypress en el
             testResultsFiles: '*.xml'
             searchFolder: '$(frontPath)/cypress/results'
             testRunTitle: 'Cypress Integration Tests'
+
+<img width="664" alt="image" src="https://github.com/user-attachments/assets/1d80697b-a190-4fe8-adee-32a29cbf3005">
+<img width="707" alt="image" src="https://github.com/user-attachments/assets/d6e85c15-be90-4981-ae75-81e2cfee9fe3">
+
 Paso 5
 Se agrega una nueva etapa que depende de la etapa de despliegue a QA anterior. En esta etapa, se realiza un nuevo despliegue utilizando nuevamente Azure App Services pero en un entorno de producción, por lo que se modifican las variables de entorno y se requiere una aprobación manual antes de comenzar esta etapa.
 
