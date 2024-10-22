@@ -29,18 +29,24 @@ Se crea un recurso Azure Container Registry desde el portal de Azure siguiendo e
 ### Paso 3
 Luego de publicar los artefactos de compilación del backend, se agrega el siguiente código dentro del pipeline.
 
+```
 - task: PublishPipelineArtifact@1
     displayName: 'Publicar Dockerfile de Back'
     inputs:
     targetPath: '$(Build.SourcesDirectory)/docker/api/dockerfile'
     artifact: 'dockerfile-back'
+```
+
 Luego de publicar los artefactos del frontend, se agrega el siguiente código dentro del pipeline.
 
+```
 - task: PublishPipelineArtifact@1
     displayName: 'Publicar Dockerfile de Front'
     inputs:
     targetPath: '$(Build.SourcesDirectory)/docker/front/Dockerfile'
     artifact: 'dockerfile-front'
+```
+
 Estos publican los Dockerfiles anteriormente creados, lo cual permite que estén disponibles para ser utilizados en etapas posteriores.
 
 ### Paso 4
@@ -59,7 +65,7 @@ Se agrega una service connection a Azure Portal llamada "AzureResourceManager".
 
 <img width="579" alt="Captura de pantalla 2024-10-19 a la(s) 13 23 28" src="https://github.com/user-attachments/assets/2009ef72-da47-4512-bdc5-82b5d5d96c66">
 
-Paso 5
+### Paso 5
 Se agregan las siguientes variables dentro del pipeline a las anteriormente creadas.
 
 ```
@@ -71,9 +77,9 @@ variables:
 
 <img width="1512" alt="Captura de pantalla 2024-10-19 a la(s) 13 25 26" src="https://github.com/user-attachments/assets/d7759242-d570-4b62-8ab7-b767634cd2e7">
 
-Paso 6
+### Paso 6
 Se agrega una nueva etapa al pipeline en la cual se construye y publica el contenedor backend de Docker en el recurso ACR anteriormente creado.
-
+```
 - stage: DockerBuildAndPush
   displayName: 'Construir y Subir Imágenes Docker a ACR'
   dependsOn: BuildAndTest
@@ -124,7 +130,9 @@ Se agrega una nueva etapa al pipeline en la cual se construye y publica el conte
             command: push
             repository: $(acrLoginServer)/$(backImageName)
             tags: 'latest'
-###Paso 7
+```
+
+### Paso 7
 Se ejecuta el pipeline con las modificaciones anteriormente descritas, el cual finaliza con éxito.
 
 <img width="1257" alt="Captura de pantalla 2024-10-20 a la(s) 10 05 24" src="https://github.com/user-attachments/assets/04bb0dbf-73ba-432c-9d3d-136221260876">
@@ -133,9 +141,9 @@ Se verifica que dentro del recurso ACR anteriormente creado, haya una imagen con
 
 <img width="1505" alt="Captura de pantalla 2024-10-20 a la(s) 10 05 37" src="https://github.com/user-attachments/assets/c2acfe82-9c24-454b-9d35-308518801afc">
 
-Paso 8
+### Paso 8
 A la etapa anteriormente creada (), se le agrega un nuevo job que permite construir y subir la imagen de frontend de Docker al recurso ACR.
-
+```
 - job: docker_build_and_push_front
       displayName: 'Construir y Subir Imagen Docker de Front a ACR'
       pool:
@@ -182,9 +190,13 @@ A la etapa anteriormente creada (), se le agrega un nuevo job que permite constr
             command: push
             repository: $(acrLoginServer)/$(frontImageName)
             tags: 'latest'
+```
 Además, se agregó una nueva variable donde se define el nombre de la imagen de frontend que será subida al ACR.
 
+```
 frontImageName: 'employee-crud-angular'
+```
+
 Se ejecuta el pipeline y se observa que el mismo finaliza de manera exitosa.
 
 <img width="1507" alt="Captura de pantalla 2024-10-20 a la(s) 10 55 10" src="https://github.com/user-attachments/assets/ebffda5c-3daa-43c4-aa2c-0b98b889f66d">
@@ -193,19 +205,23 @@ A su vez, dentro del recurso ACR se pueden ver ambas imágenes correctamente sub
 
 <img width="1509" alt="Captura de pantalla 2024-10-20 a la(s) 10 55 32" src="https://github.com/user-attachments/assets/98cecde8-3f62-4e81-b959-2615f7ad2e98">
 
-Paso 9
+### Paso 9
 Se agregaron al pipeline las siguientes variables:
 
+```
   acrName: 'mcingsw3uccacr'
   ResourceGroupName: 'IngSw3-UCC'
   backContainerInstanceNameQA: 'chattas-crud-api-qa'
   backImageTag: 'latest' 
   container-cpu-api-qa: 1 #CPUS de nuestro container de QA
   container-memory-api-qa: 1.5 #RAM de nuestro container de QA
+```
+
 Desde la interfaz gráfica de Azure DevOps, se agregó una variable secreta "cnn_string_qa" que contiene la cadena de conexión a la base de datos de Azure. Imagen Paso 9a
 
 Finalmente, se agregó una nueva etapa al pipeline que se encarga de realizar el despliegue de la imagen anteriormente creada en Azure Container Instances, dentro del entorno de QA.
 
+```
 - stage: DeployToACIQA
   displayName: 'Desplegar en Azure Container Instances (ACI) QA'
   dependsOn: DockerBuildAndPush
@@ -245,6 +261,8 @@ Finalmente, se agregó una nueva etapa al pipeline que se encarga de realizar el
                 --restart-policy Always \
                 --cpu $(container-cpu-api-qa) \
                 --memory $(container-memory-api-qa)
+```
+
 ### Paso 10
 Se ejecuta el pipeline con las modificaciones anteriormente mencionadas, que finaliza de manera exitosa.
 
@@ -258,39 +276,47 @@ Se navega a la URL provista y se observa que el contenedor se encuentra correcta
 
 Imagen Paso 10c
 
-Paso 11
+### Paso 11
 A continuación, realizaremos el despliegue del frontend del proyecto en un Azure Container Instance utilizando variables de entorno para la API URL, lo cual permitirá utilizar el mismo archivo para múltiples despliegues en diferentes entornos. Para esto, fue necesario modificar o crear los siguientes archivos.
 
-src/environments/environments.ts
+- src/environments/environments.ts
+```
 export const environment = {
   production: false,
   apiUrl: (typeof window !== 'undefined' && window.env && window.env.apiUrl) 
              ? window.env.apiUrl
              : 'http://localhost:7150/api/Employee' // Valor por defecto
 };
-src/environments/environments.prod.ts
+```
+- src/environments/environments.prod.ts
+```
 export const environment = {
   production: true,
   apiUrl: (typeof window !== 'undefined' && window.env && window.env.apiUrl) 
              ? window.env.apiUrl
              : 'http://localhost:7150/api/Employee' // Valor por defecto
 };
-src/typing.d.ts
+```
+-src/typing.d.ts
+```
 interface Window {
     env: {
       apiUrl: string;
     };
   }
+```
 Luego de modificar el código, se crea un nuevo job en el pipeline que crea un Azure Container Instance y realiza el deploy de la imagen de Frontend.
 
 Nuevas variables:
-
+```
   frontContainerInstanceNameQA: 'chattas-crud-front-qa'
   frontImageTag: 'latest' 
   container-cpu-front-qa: 1
   container-memory-front-qa: 1.5
+```
 Job creado:
 
+```
     - job: deploy_front_to_aci_qa
       displayName: 'Desplegar Frontend en Azure Container Instances (ACI) QA'
       pool:
@@ -325,6 +351,8 @@ Job creado:
                 --restart-policy Always \
                 --cpu $(container-cpu-front-qa) \
                 --memory $(container-memory-front-qa)
+```
+
 Además, se creó una nueva variable de entorno mediante la GUI de Azure llamada "api_url_aci_qa" que contiene la URL de la API desplegada en el recurso ACI anteriormente creado.
 
 Luego de ejecutar el pipeline, dentro de Azure Portal se creó un nuevo recurso ACI.
@@ -335,13 +363,16 @@ Al navegar a la URL del contenedor, se muestra que el mismo está correctamente 
 
 Imagen Paso 11b
 
-Paso 12
+### Paso 12
 Para agregar la ejecución de las pruebas de integración en el entorno de QA de los Azure Container Instances, se modificaron los archivos de Cypress para permitir que los mismos reciban variables de entorno donde se definen las URL de los contenedores (o cualquier entorno en el que se deban realizar las pruebas).
 
+```
   const homeURL = Cypress.env('homeUrl');
   const apiURL = Cypress.env('apiUrl');
+```
 Luego, se agregó en el pipeline un nuevo job posterior a los despliegues en ACI, de los cuales depende. En este, se ejecutan y publican las pruebas de integración anteriormente escritas.
 
+```
     - job: RunCypressTests
       displayName: 'Run Cypress Tests'
       dependsOn: [deploy_front_to_aci_qa, deploy_api_to_aci_qa]
@@ -361,11 +392,13 @@ Luego, se agregó en el pipeline un nuevo job posterior a los despliegues en ACI
             testResultsFiles: '*.xml'
             searchFolder: '$(frontPath)/cypress/results'
             testRunTitle: 'Cypress Integration Tests'
+```
+
 Luego de ejecutar el pipeline, en el apartado Tests se observan los resultados publicados de las pruebas de Cypress junto con los tests unitarios.
 
 <img width="1392" alt="Captura de pantalla 2024-10-21 a la(s) 23 05 35" src="https://github.com/user-attachments/assets/4b4d7a63-7af4-4ac9-9531-a5ce74667b02">
 
-Paso 13
+### Paso 13
 Finalmente, se agrega una nueva etapa que realiza un despliegue de la aplicación en Azure Container Instances en un ambiente de producción. La misma es similar a la anteriormente definida, pero se agrega como requisito una aprobación manual del usuario antes de comenzar el despliegue mediante el uso de environments.
 
 Al ejecutar el pipeline, se observa que el mismo se detiene al iniciar esta etapa permitiendo aprobar o denegar el despliegue.
