@@ -302,7 +302,7 @@ Dentro de Azure Portal, se observa que hay un nuevo recurso Azure Container Inst
 
 Se navega a la URL provista y se observa que el contenedor se encuentra correctamente conectado a la base de datos.
 
-Imagen Paso 10c
+ <img width="694" alt="image" src="https://github.com/user-attachments/assets/47be065a-b94d-48cf-bcf0-7305257c841f">
 
 ### Paso 11
 A continuación, realizaremos el despliegue del frontend del proyecto en un Azure Container Instance utilizando variables de entorno para la API URL, lo cual permitirá utilizar el mismo archivo para múltiples despliegues en diferentes entornos. Para esto, fue necesario modificar o crear los siguientes archivos.
@@ -389,7 +389,7 @@ Imagen Paso 11a
 
 Al navegar a la URL del contenedor, se muestra que el mismo está correctamente conectado al backend debido a que se ven los datos almacenados en la DB, además de contener el log con la URL extraída de la variable global de Azure Pipeline.
 
-Imagen Paso 11b
+<img width="846" alt="image" src="https://github.com/user-attachments/assets/14df20f4-bc40-43b3-88a8-083877d6ce32">
 
 ### Paso 12
 Para agregar la ejecución de las pruebas de integración en el entorno de QA de los Azure Container Instances, se modificaron los archivos de Cypress para permitir que los mismos reciban variables de entorno donde se definen las URL de los contenedores (o cualquier entorno en el que se deban realizar las pruebas).
