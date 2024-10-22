@@ -237,7 +237,7 @@ A su vez, dentro del recurso ACR se pueden ver ambas imágenes correctamente sub
 Se agregaron al pipeline las siguientes variables:
 
 ```
-  acrName: 'mcingsw3uccacr'
+  acrName: 'vgingsw3uccacr'
   ResourceGroupName: 'IngSw3-UCC'
   backContainerInstanceNameQA: 'gaggio-crud-api-qa'
   backImageTag: 'latest' 
