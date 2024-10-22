@@ -434,7 +434,7 @@ Al ejecutar el pipeline, se observa que el mismo se detiene al iniciar esta etap
 
 ![image](https://github.com/user-attachments/assets/f2e8f347-d7d8-45ff-baec-5a362140586a)
 
-Imagen Paso 13a
+![image](https://github.com/user-attachments/assets/fd8ad708-93bd-4d64-b4d3-abe2da9ef050)
 
 Una vez aprobado el despliegue y finalizada esta etapa, dentro del grupo de recursos en Azure Portal se observa que ambos ACI fueron creados exitosamente.
 
