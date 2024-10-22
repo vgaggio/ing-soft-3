@@ -1,5 +1,18 @@
 # Trabajo Práctico 8
 
+## Prerequisitos
+<img width="577" alt="Captura de pantalla 2024-10-18 a la(s) 18 23 11" src="https://github.com/user-attachments/assets/0f1108ab-d4ba-4973-a226-d2e3d837b0d9">
+<img width="569" alt="Captura de pantalla 2024-10-18 a la(s) 18 23 28" src="https://github.com/user-attachments/assets/af6eca81-e5b7-426d-82fc-ea9071207171">
+<img width="564" alt="Captura de pantalla 2024-10-18 a la(s) 18 24 04" src="https://github.com/user-attachments/assets/8b984651-efdc-4a83-910e-3034bfc4572f">
+<img width="566" alt="Captura de pantalla 2024-10-18 a la(s) 18 24 12" src="https://github.com/user-attachments/assets/937c3779-e470-4bcc-b23f-16a4bb95ce29">
+<img width="571" alt="Captura de pantalla 2024-10-18 a la(s) 18 24 39" src="https://github.com/user-attachments/assets/1da32907-9841-4279-b53d-4f0fd9330ee2">
+<img width="565" alt="Captura de pantalla 2024-10-18 a la(s) 18 25 18" src="https://github.com/user-attachments/assets/a40bf8de-f7f8-45e9-a6da-ca1a248c3911">
+<img width="960" alt="Captura de pantalla 2024-10-18 a la(s) 18 31 45" src="https://github.com/user-attachments/assets/e46c3a6e-7d17-4155-b82d-04db2e7304bf">
+<img width="746" alt="Captura de pantalla 2024-10-18 a la(s) 18 32 03" src="https://github.com/user-attachments/assets/60259ebe-ce52-43d1-ac23-31478b5da353">
+<img width="961" alt="Captura de pantalla 2024-10-18 a la(s) 18 32 22" src="https://github.com/user-attachments/assets/f1bfec9e-989f-4092-9f67-1cf92e856d3f">
+<img width="778" alt="Captura de pantalla 2024-10-18 a la(s) 18 32 44" src="https://github.com/user-attachments/assets/cf1d4c57-7572-4f82-a450-2a53ce20cc32">
+
+
 ### Paso 1
 Se crea un directorio "docker" dentro del directorio raíz del proyecto que contiene 2 carpetas (api y front), y dentro de cada una de ellas se crean los correspondientes Dockerfile como se muestra a continuación.
 
@@ -12,7 +25,7 @@ Se crea un directorio "docker" dentro del directorio raíz del proyecto que cont
 <img width="753" alt="Captura de pantalla 2024-10-18 a la(s) 18 42 45" src="https://github.com/user-attachments/assets/8e7a8873-016b-4a99-96e4-62cda43fb781">
 
 ### Paso 2
-Se crea un recurso Azure Container Registry desde el portal de Azure siguiendo el instructivo.
+Se crea un recurso Azure Container Registry(ACR) desde el portal de Azure siguiendo el instructivo 5.1.
 
 <img width="846" alt="Captura de pantalla 2024-10-19 a la(s) 12 18 10" src="https://github.com/user-attachments/assets/9e07d3d2-e266-4aaf-9225-fbc3a6c20a52">
 
@@ -25,6 +38,7 @@ Se crea un recurso Azure Container Registry desde el portal de Azure siguiendo e
 <img width="1512" alt="Captura de pantalla 2024-10-19 a la(s) 12 24 58" src="https://github.com/user-attachments/assets/97d7ba6e-87e7-4831-87e4-e2d77db1e6c5">
 
 <img width="1244" alt="Captura de pantalla 2024-10-19 a la(s) 12 26 25" src="https://github.com/user-attachments/assets/d984227f-67bf-4f41-b311-d43b1574b2de">
+<img width="963" alt="Captura de pantalla 2024-10-18 a la(s) 18 33 27" src="https://github.com/user-attachments/assets/f6343b01-b485-494f-962b-fb8639132f10">
 
 ### Paso 3
 Luego de publicar los artefactos de compilación del backend, se agrega el siguiente código dentro del pipeline.
@@ -50,7 +64,7 @@ Luego de publicar los artefactos del frontend, se agrega el siguiente código de
 Estos publican los Dockerfiles anteriormente creados, lo cual permite que estén disponibles para ser utilizados en etapas posteriores.
 
 ### Paso 4
-Se agrega una service connection a Azure Portal llamada "AzureResourceManager".
+Se agrega una service connection para el manejo de recursos a Azure Portal llamada "AzureResourceManager" como se indica en instructivo 5.2.
 
 
 <img width="1512" alt="Captura de pantalla 2024-10-19 a la(s) 12 29 35" src="https://github.com/user-attachments/assets/e6f94e03-c441-4bec-b926-e21ffdbf6b33">
@@ -79,6 +93,7 @@ variables:
 
 ### Paso 6
 Se agrega una nueva etapa al pipeline en la cual se construye y publica el contenedor backend de Docker en el recurso ACR anteriormente creado.
+
 ```
 - stage: DockerBuildAndPush
   displayName: 'Construir y Subir Imágenes Docker a ACR'
@@ -137,12 +152,13 @@ Se ejecuta el pipeline con las modificaciones anteriormente descritas, el cual f
 
 <img width="1257" alt="Captura de pantalla 2024-10-20 a la(s) 10 05 24" src="https://github.com/user-attachments/assets/04bb0dbf-73ba-432c-9d3d-136221260876">
 
-Se verifica que dentro del recurso ACR anteriormente creado, haya una imagen con el nombre definido dentro de la variable del pipeline.
+Se verifica que dentro del recurso ACR anteriormente creado haya al acceder a la opción Repositorios de nuestro recurso Azure Container Registry, una imagen con el nombre definido dentro de la variable del pipeline.
 
 <img width="1505" alt="Captura de pantalla 2024-10-20 a la(s) 10 05 37" src="https://github.com/user-attachments/assets/c2acfe82-9c24-454b-9d35-308518801afc">
 
 ### Paso 8
 A la etapa anteriormente creada (), se le agrega un nuevo job que permite construir y subir la imagen de frontend de Docker al recurso ACR.
+
 ```
 - job: docker_build_and_push_front
       displayName: 'Construir y Subir Imagen Docker de Front a ACR'
