@@ -71,6 +71,8 @@ Descripción: Son agentes que configuras y gestionas tú mismo, ya sea en tus pr
 
 Cuándo usar: Adecuado cuando necesitas un entorno de compilación personalizado o si tienes cargas de trabajo largas o específicas que no se adaptan a los agentes Microsoft-hosted.
 
+2 - Pasos del TP
+2.1 Verificar acceso a Pipelines concedido
 
 
 ![image](https://github.com/user-attachments/assets/f3657c0f-386b-40f4-84ca-3bb45d2ffeb1)
@@ -80,11 +82,86 @@ Cuándo usar: Adecuado cuando necesitas un entorno de compilación personalizado
 ![image](https://github.com/user-attachments/assets/ef4dfcea-47ef-40c6-87d3-21f9c8843429)
 
 
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/f686b40c-f714-4eb4-a894-263f1b9ae910">
+
+
+
+
 ## 4.3 Explicación: ¿Por qué es necesario contar con una tarea de Publish en un pipeline que corre en un agente de Microsoft en la nube?
 Cuando utilizas un agente Microsoft-hosted en Azure DevOps, el entorno en el que se ejecuta el pipeline es temporal. Una vez que el pipeline finaliza, todos los archivos y datos que se generaron durante la ejecución del pipeline son eliminados. Esto significa que si no publicas los artefactos o resultados generados durante la ejecución, no tendrás acceso a ellos después de que el pipeline termine.
 
 La tarea de Publicar artefactos (Publish Pipeline Artifacts) se encarga de almacenar los resultados (artefactos) de la compilación en una ubicación permanente dentro de Azure DevOps, como el almacenamiento de artefactos de pipeline. De esta manera, puedes descargarlos, reutilizarlos en otros pipelines o desplegarlos en otros entornos, incluso después de que el agente de Microsoft haya terminado su trabajo y haya liberado sus recursos.
 
-<img width="1511" alt="image" src="https://github.com/user-attachments/assets/f686b40c-f714-4eb4-a894-263f1b9ae910">
+Punto 4: Descargar el resultado del pipeline y correr localmente el software compilado.
+<img width="869" alt="image" src="https://github.com/user-attachments/assets/8d770496-6f11-436b-ae5b-0671a1bdbfe5">
+
+<img width="643" alt="image" src="https://github.com/user-attachments/assets/99ec20ac-e196-4529-a454-e300809989d8">
+
+
+<img width="1001" alt="image" src="https://github.com/user-attachments/assets/31bc6c01-aaf6-4cfa-8b61-b7f909818a06">
+
+Punto 5: Habilitar el editor clásico de pipelines. Explicar las diferencias claves entre este tipo de editor y el editor YAML.
+<img width="629" alt="image" src="https://github.com/user-attachments/assets/82fd2410-f3b1-4336-ae61-806073b645b5">
+
+
+El editor clásico de Azure DevOps es una interfaz gráfica que facilita la creación de pipelines a través de formularios y opciones desplegables, lo que lo hace ideal para principiantes o usuarios que prefieren trabajar sin escribir código. Aunque es fácil de usar, tiene limitaciones en cuanto a flexibilidad y personalización avanzada. Además, la configuración de pipelines en el editor clásico no se integra automáticamente con el control de versiones, lo que puede dificultar la colaboración y el seguimiento de cambios en proyectos más grandes.
+Por otro lado, el editor YAML permite definir pipelines como código, lo que ofrece una mayor flexibilidad y control sobre la configuración del pipeline. Al estar almacenado directamente en el repositorio, el archivo YAML se versiona junto con el código fuente, facilitando la colaboración y la trazabilidad de los cambios. Aunque tiene una curva de aprendizaje más pronunciada, especialmente para usuarios no familiarizados con YAML, el editor YAML es más adecuado para proyectos complejos que requieren una configuración más detallada y reutilizable. En resumen, el editor clásico es más accesible, mientras que YAML proporciona un control más robusto y es ideal para entornos de desarrollo más avanzados.
+
+
+Punto 6: Crear un nuevo pipeline con el editor clásico. Descargar el resultado del pipeline y correr localmente el software compilado.
+<img width="654" alt="image" src="https://github.com/user-attachments/assets/76c80e6a-c4f9-412b-bff2-58f3f429d70f">
+
+<img width="647" alt="image" src="https://github.com/user-attachments/assets/98d10996-ba2e-4fcb-ae80-33fc26539b81">
+
+<img width="639" alt="image" src="https://github.com/user-attachments/assets/83734b72-5cf8-4b85-be48-516902992c27">
+
+<img width="996" alt="image" src="https://github.com/user-attachments/assets/9729afd1-e3c9-4ea7-a596-96dece093555">
+
+Punto 7: Configurar CI en ambos pipelines (YAML y Classic Editor). Mostrar resultados de la ejecución automática de ambos pipelines al hacer un commit en la rama main.
+<img width="622" alt="image" src="https://github.com/user-attachments/assets/441ca94f-ef20-43fb-bfa2-24f93459ab6a">
+
+<img width="685" alt="image" src="https://github.com/user-attachments/assets/f18a3e22-4f8d-47ef-9731-0c768b6ddd43">
+
+<img width="675" alt="image" src="https://github.com/user-attachments/assets/dc32542e-09fc-48ed-94a7-87053ea600b6">
+
+
+Punto 8: Explicar la diferencia entre un agente MS y un agente Self-Hosted. Qué ventajas y desventajas hay entre ambos? Cuándo es conveniente y/o necesario usar un Self-Hosted Agent?
+Un agente MS es un agente en la nube gestionado por Azure DevOps. Es fácil de usar, sin necesidad de gestionar infraestructura, pero tiene menos control sobre el entorno y puede haber tiempos de espera en momentos de alta demanda.
+Un agente Self-Hosted es un agente que configuras en tu propia infraestructura, dándote control total sobre el entorno y sin limitaciones de tiempo de ejecución. Sin embargo, requiere mantenimiento y gestión continua.
+Usa un agente Self-Hosted cuando necesitas un entorno personalizado, integrar software específico o evitar las limitaciones de los agentes en la nube.
+
+Punto 9: Crear un Pool de Agentes y un Agente Self-Hosted
+
+<img width="706" alt="image" src="https://github.com/user-attachments/assets/f8bb4045-72ee-48b6-9685-b39561cbd613">
+
+<img width="681" alt="image" src="https://github.com/user-attachments/assets/0632a1f7-af96-40a8-81a5-dd50e8165b44">
+
+<img width="672" alt="image" src="https://github.com/user-attachments/assets/8e31e1a9-2401-42fb-84a9-c952db9fcd08">
+
+Punto 10: Instalar y correr un agente en nuestra máquina local.
+
+<img width="648" alt="image" src="https://github.com/user-attachments/assets/a18e2e0e-e984-47f2-bbfb-08fa5dc599d8">
+
+Punto 11: Crear un pipeline que use el agente Self-Hosted alojado en nuestra máquina local.
+
+<img width="651" alt="image" src="https://github.com/user-attachments/assets/dbaf1c42-e8ae-45dd-8287-362e44258733">
+
+<img width="631" alt="image" src="https://github.com/user-attachments/assets/5ce1ba70-b325-465e-9254-8fb4ca5376b0">
+
+Punto 12: Buscar el resultado del pipeline y correr localmente el software compilado.
+<img width="632" alt="image" src="https://github.com/user-attachments/assets/dfd51ebd-47c4-40f3-8f78-71838ac22881">
+
+<img width="1005" alt="image" src="https://github.com/user-attachments/assets/dc9efbb7-a2c1-4b59-93c6-3939bc7e7c79">
+
+Punto 13: Crear un nuevo proyecto en ADO clonado desde un repo que contenga una aplicación en Angular
+<img width="640" alt="image" src="https://github.com/user-attachments/assets/72e74dc6-41bc-40f8-adc5-cc0a9d9b9f61">
+
+Punto 14: Configurar un pipeline de build para un proyecto de tipo Angular como el clonado.
+<img width="1003" alt="image" src="https://github.com/user-attachments/assets/dca61916-0156-4900-a407-77de6f9c8bed">
+
+Punto 15: Habilitar CI para el pipeline.
+
+
+<img width="376" alt="image" src="https://github.com/user-attachments/assets/bdfd78c2-16ef-4bfd-ba97-2571bd77e930">
 
 
