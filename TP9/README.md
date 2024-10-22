@@ -1,4 +1,4 @@
-
+<img width="757" alt="image" src="https://github.com/user-attachments/assets/55780b9e-b40a-4c56-b7b0-ee14a0dc8d1a"><img width="757" alt="image" src="https://github.com/user-attachments/assets/8ecfc628-0b61-4876-a540-0638fe772757">
 ## 1- Desarrollo:
 ### Paso 1
 
@@ -105,10 +105,11 @@ Se agrega un nuevo job a la etapa anteriormente creada que permite realizar el d
  ```
 
 Nuevamente, esto crea un recurso dentro de Azure Portal.
+<img width="757" alt="image" src="https://github.com/user-attachments/assets/7cda0752-01f0-4d5c-bdab-c6b33c22b5fb">
 
 <img width="1511" alt="image" src="https://github.com/user-attachments/assets/654bde28-cf32-40a5-9daa-79d40dce4185">
 
-Paso 3
+### Paso 3
 Se agregan las variables necesarias para esta etapa considerando que debe haber un entorno de QA y un entorno de Producción.
 
  ```
@@ -138,7 +139,7 @@ Se agregan las variables necesarias para esta etapa considerando que debe haber 
 
 <img width="1121" alt="image" src="https://github.com/user-attachments/assets/4a3af1c7-b2f2-40aa-a188-d84dd25ce9fc">
 
-Paso 4
+### Paso 4
 Se agrega un nuevo job a la etapa para ejecutar las pruebas E2E de Cypress en el entorno de QA de los Azure App Service.
  ```
 
