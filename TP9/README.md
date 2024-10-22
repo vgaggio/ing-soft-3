@@ -1150,10 +1150,10 @@ stages:
                     # Set environment variables
                     az webapp config appsettings set --name $(frontAppServiceProd) --resource-group $(ResourceGroupName) \
                       --settings API_URL="$(api_url_as_prod)" \
-RESULTADOS
-Las 8 etapas del pipeline finalizan su ejecución de manera exitosa.
 
-Imagen 1
+
+
+<img width="1130" alt="image" src="https://github.com/user-attachments/assets/10d295ae-b88a-47fe-8542-4bdb16381aa7">
 
 Las pruebas unitarias (de API y Front) y las pruebas de integración (en los 3 despliegues) son aprobadas.
 
