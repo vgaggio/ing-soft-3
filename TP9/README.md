@@ -134,6 +134,7 @@ Se agregan las variables necesarias para esta etapa considerando que debe haber 
  ```
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/5bc0285b-23f5-411b-a51c-4066b70266fc">
+<img width="423" alt="image" src="https://github.com/user-attachments/assets/cc082e35-b9ea-4540-a1a8-15ee12040f30">
 
 
 <img width="1121" alt="image" src="https://github.com/user-attachments/assets/4a3af1c7-b2f2-40aa-a188-d84dd25ce9fc">
@@ -263,6 +264,9 @@ Se agrega una nueva etapa que depende de la etapa de despliegue a QA anterior. E
 Se muestran los recursos generados a partir de la ejecución de la presente etapa.
 <img width="1511" alt="image" src="https://github.com/user-attachments/assets/36d4cb8a-7db0-4508-b68e-71e71d878bc7">
 <img width="757" alt="image" src="https://github.com/user-attachments/assets/2ff6155d-6565-44d4-b787-c29d9dbf368e">
+<img width="461" alt="image" src="https://github.com/user-attachments/assets/9c8737db-7b72-429e-b917-377ac0c4526c">
+<img width="741" alt="image" src="https://github.com/user-attachments/assets/ec343838-aa70-4942-8adb-03b377ef7d7b">
+
 
 ### Paso 6
 
