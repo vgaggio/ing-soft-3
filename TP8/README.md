@@ -78,6 +78,15 @@ Se agrega una service connection para el manejo de recursos a Azure Portal llama
 
 <img width="473" alt="Captura de pantalla 2024-10-19 a la(s) 12 42 32" src="https://github.com/user-attachments/assets/f1d35e67-1985-4d0b-b8be-2255a336458b">
 
+Tenemos que modificar program.cs para que lea la variable de entorno y use esa cadena de conexion
+
+Para que funcione, hay que habilitar el acceso administrativo de ACR desde azure CLI
+<img width="747" alt="image" src="https://github.com/user-attachments/assets/60da3712-5911-4523-bb49-43ecbf0f41bc">
+
+Ademas, debemos registrar el proveedor de recursos Microsoft.ContainerInstance, que es necesario para crear instancias de contenedores en Azure.
+<img width="754" alt="image" src="https://github.com/user-attachments/assets/fec029d3-c5da-4406-9047-ee403046f5e5">
+
+
 <img width="1498" alt="Captura de pantalla 2024-10-19 a la(s) 13 01 14" src="https://github.com/user-attachments/assets/b6c0faa9-ef54-4ffa-b193-46217dfd6e20">
 
 <img width="579" alt="Captura de pantalla 2024-10-19 a la(s) 13 23 28" src="https://github.com/user-attachments/assets/2009ef72-da47-4512-bdc5-82b5d5d96c66">
