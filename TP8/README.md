@@ -239,7 +239,7 @@ Se agregaron al pipeline las siguientes variables:
 ```
   acrName: 'mcingsw3uccacr'
   ResourceGroupName: 'IngSw3-UCC'
-  backContainerInstanceNameQA: 'chattas-crud-api-qa'
+  backContainerInstanceNameQA: 'gaggio-crud-api-qa'
   backImageTag: 'latest' 
   container-cpu-api-qa: 1 #CPUS de nuestro container de QA
   container-memory-api-qa: 1.5 #RAM de nuestro container de QA
@@ -337,7 +337,7 @@ Luego de modificar el código, se crea un nuevo job en el pipeline que crea un A
 
 Nuevas variables:
 ```
-  frontContainerInstanceNameQA: 'chattas-crud-front-qa'
+  frontContainerInstanceNameQA: 'gaggio-crud-front-qa'
   frontImageTag: 'latest' 
   container-cpu-front-qa: 1
   container-memory-front-qa: 1.5
