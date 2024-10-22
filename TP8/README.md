@@ -430,6 +430,9 @@ Luego de ejecutar el pipeline, en el apartado Tests se observan los resultados p
 Finalmente, se agrega una nueva etapa que realiza un despliegue de la aplicación en Azure Container Instances en un ambiente de producción. La misma es similar a la anteriormente definida, pero se agrega como requisito una aprobación manual del usuario antes de comenzar el despliegue mediante el uso de environments.
 
 Al ejecutar el pipeline, se observa que el mismo se detiene al iniciar esta etapa permitiendo aprobar o denegar el despliegue.
+![image](https://github.com/user-attachments/assets/730c96c5-a378-4c4e-ac52-4b014af81396)
+
+![image](https://github.com/user-attachments/assets/f2e8f347-d7d8-45ff-baec-5a362140586a)
 
 Imagen Paso 13a
 
