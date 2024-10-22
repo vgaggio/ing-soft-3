@@ -1,4 +1,4 @@
-# Trabajo Práctico 9
+![image](https://github.com/user-attachments/assets/13338d75-468e-494d-80a9-b9de9841bc61)# Trabajo Práctico 9
 
 ## 1- Desarrollo:
 ### Paso 1
@@ -8,17 +8,17 @@ Se agrega al pipeline una nueva etapa que depende de la etapa de construcción y
 
 
  ```
-  #---------------------------------------
+    #---------------------------------------
   ### STAGE DEPLOY TO AZURE APP SERVICE QA
   #---------------------------------------
-  - stage: DeployImagesToAppServiceQA
-    displayName: 'Desplegar Imagenes en Azure App Service (QA)'
-    dependsOn: 
-    - BuildAndTestBackAndFront
+- stage: DeployImagesToAppServiceQA
+  displayName: 'Desplegar Imagenes en Azure App Service (QA)'
+  dependsOn: 
+    - BuildAndTest
     - DockerBuildAndPush
-    condition: succeeded()
-    jobs:
-      - job: DeployImagesToAppServiceQA
+  condition: succeeded()
+  jobs:
+      - job: DeployAPIImageToAppServiceQA
         displayName: 'Desplegar Imagenes de API y Front en Azure App Service (QA)'
         pool:
           vmImage: 'ubuntu-latest'
@@ -69,40 +69,42 @@ Imagen Paso 1
 
 Paso 2
 Se agrega un nuevo job a la etapa anteriormente creada que permite realizar el despliegue de un contenedor del frontend del proyecto en un Azure App Service.
-
+ ```
 # -------------------------------------------------------------------------------
 # |               DEPLOY FRONTEND TO AZURE APP SERVICE                           |
 # -------------------------------------------------------------------------------
-    - job: DeployFrontImageToAppServiceQA
-      displayName: 'Deploy Front to Azure App Service (QA)'
-      pool:
-        vmImage: 'ubuntu-latest'
-      steps:
-        - task: AzureCLI@2
-          displayName: 'Create Front Azure App Service resource and configure image'
-          inputs:
-            azureSubscription: '$(ConnectedServiceName)'
-            scriptType: 'bash'
-            scriptLocation: 'inlineScript'
-            inlineScript: |
-              # Check if Front App Service already exists
-              if ! az webapp list --query "[?name=='$(frontAppServiceQA)' && resourceGroup=='$(ResourceGroupName)'] | length(@)" -o tsv | grep -q '^1$'; then
-                echo "Front App Service doesn't exist. Creating new..."
-                # Create App Service without specifying container image
-                az webapp create --resource-group $(ResourceGroupName) --plan $(AppServicePlanLinux) --name $(frontAppServiceQA) --deployment-container-image-name "nginx"  # Especifica una imagen temporal para permitir la creación
-              else
-                echo "Front App Service already exists. Updating image..."
-              fi
+      - job: DeployFrontImageToAppServiceQA
+        displayName: 'Deploy Front to Azure App Service (QA)'
+        pool:
+          vmImage: 'ubuntu-latest'
+        steps:
+          - task: AzureCLI@2
+            displayName: 'Create Front Azure App Service resource and configure image'
+            inputs:
+              azureSubscription: '$(ConnectedServiceName)'
+              scriptType: 'bash'
+              scriptLocation: 'inlineScript'
+              inlineScript: |
+                # Check if Front App Service already exists
+                if ! az webapp list --query "[?name=='$(frontAppServiceQA)' && resourceGroup=='$(ResourceGroupName)'] | length(@)" -o tsv | grep -q '^1$'; then
+                  echo "Front App Service doesn't exist. Creating new..."
+                  # Create App Service without specifying container image
+                  az webapp create --resource-group $(ResourceGroupName) --plan $(AppServicePlanLinux) --name $(frontAppServiceQA) --deployment-container-image-name "nginx"  # Especifica una imagen temporal para permitir la creación
+                else
+                  echo "Front App Service already exists. Updating image..."
+                fi
 
-              # Configure App Service to use Azure Container Registry (ACR)
-              az webapp config container set --name $(frontAppServiceQA) --resource-group $(ResourceGroupName) \
-                --container-image-name $(acrLoginServer)/$(frontImageName):$(frontImageTag) \
-                --container-registry-url https://$(acrLoginServer) \
-                --container-registry-user $(acrName) \
-                --container-registry-password $(az acr credential show --name $(acrName) --query "passwords[0].value" -o tsv)
-              # Set environment variables
-              az webapp config appsettings set --name $(frontAppServiceQA) --resource-group $(ResourceGroupName) \
-                --settings API_URL="$(api_url_as_qa)" \
+                # Configure App Service to use Azure Container Registry (ACR)
+                az webapp config container set --name $(frontAppServiceQA) --resource-group $(ResourceGroupName) \
+                  --container-image-name $(acrLoginServer)/$(frontImageName):$(frontImageTag) \
+                  --container-registry-url https://$(acrLoginServer) \
+                  --container-registry-user $(acrName) \
+                  --container-registry-password $(az acr credential show --name $(acrName) --query "passwords[0].value" -o tsv)
+                # Set environment variables
+                az webapp config appsettings set --name $(frontAppServiceQA) --resource-group $(ResourceGroupName) \
+                  --settings API_URL="$(api_url_as_qa)" \
+ ```
+
 Nuevamente, esto crea un recurso dentro de Azure Portal.
 
 <img width="1511" alt="image" src="https://github.com/user-attachments/assets/654bde28-cf32-40a5-9daa-79d40dce4185">
@@ -110,24 +112,27 @@ Nuevamente, esto crea un recurso dentro de Azure Portal.
 Paso 3
 Se agregan las variables necesarias para esta etapa considerando que debe haber un entorno de QA y un entorno de Producción.
 
+ ```
 # Azure App Services
-  AppServicePlanLinux: 'ASP-IngSw3UCC-Linux'
+  AppServicePlanLinux: 'LinuxAppPlan01'
 
   # API (QA)
-  backAppServiceQA: 'chattas-as-crud-api-qa'
+  backAppServiceQA: 'gaggio-as-crud-api-qa'
   api_url_as_qa: 'https://$(backAppServiceQA).azurewebsites.net/api/Employee'
 
   # FRONT (QA)
-  frontAppServiceQA: 'chattas-as-crud-front-qa'
+  frontAppServiceQA: 'gaggio-as-crud-front-qa'
   front_url_as_qa: 'https://$(frontAppServiceQA).azurewebsites.net'
 
   # API (Prod)
-  backAppServiceProd: 'chattas-as-crud-api-prod'
+  backAppServiceProd: 'gaggio-as-crud-api-prod'
   api_url_as_prod: 'https://$(backAppServiceProd).azurewebsites.net/api/Employee'
 
   # FRONT (Prod)
-  frontAppServiceProd: 'chattas-as-crud-front-prod'
+  frontAppServiceProd: 'gaggio-as-crud-front-prod'
   front_url_as_prod: 'https://$(frontAppServiceProd).azurewebsites.net'
+  
+ ```
 
 <img width="600" alt="image" src="https://github.com/user-attachments/assets/5bc0285b-23f5-411b-a51c-4066b70266fc">
 
@@ -136,6 +141,7 @@ Se agregan las variables necesarias para esta etapa considerando que debe haber 
 
 Paso 4
 Se agrega un nuevo job a la etapa para ejecutar las pruebas E2E de Cypress en el entorno de QA de los Azure App Service.
+ ```
 
 # -------------------------------------------------------------------------------
 # |           RUN INTEGRATION TESTS ON AZURE APP SERVICES                       |
@@ -159,6 +165,7 @@ Se agrega un nuevo job a la etapa para ejecutar las pruebas E2E de Cypress en el
             testResultsFiles: '*.xml'
             searchFolder: '$(frontPath)/cypress/results'
             testRunTitle: 'Cypress Integration Tests'
+ ```
 
 <img width="664" alt="image" src="https://github.com/user-attachments/assets/1d80697b-a190-4fe8-adee-32a29cbf3005">
 <img width="707" alt="image" src="https://github.com/user-attachments/assets/d6e85c15-be90-4981-ae75-81e2cfee9fe3">
@@ -167,6 +174,8 @@ Paso 5
 Se agrega una nueva etapa que depende de la etapa de despliegue a QA anterior. En esta etapa, se realiza un nuevo despliegue utilizando nuevamente Azure App Services pero en un entorno de producción, por lo que se modifican las variables de entorno y se requiere una aprobación manual antes de comenzar esta etapa.
 
 A su vez, se creó una nueva base de datos SQL para el entorno productivo, de modo que los datos almacenados entre QA y Prod son independientes. La base de datos inicial se utiliza para todos los despliegues en QA, mientras que la nueva será conectada a las aplicaciones productivas (en entorno Prod).
+
+ ```
 
 # -------------------------------------------------------------------------------
 # |     STAGE DEPLOY FRONTEND AND BACKEND TO AZURE APP SERVICES PROD             |
@@ -251,15 +260,10 @@ A su vez, se creó una nueva base de datos SQL para el entorno productivo, de mo
                     # Set environment variables
                     az webapp config appsettings set --name $(frontAppServiceProd) --resource-group $(ResourceGroupName) \
                       --settings API_URL="$(api_url_as_prod)" \
-Se muestra la nueva base de datos del entorno Prod creada.
+ ```
 
-Imagen Paso 5a
-
-Y los recursos generados a partir de la ejecución de la presente etapa.
-
-Imagen Paso 5b
-
-Imagen Paso 5c
+Se muestran los recursos generados a partir de la ejecución de la presente etapa.
+<img width="1511" alt="image" src="https://github.com/user-attachments/assets/36d4cb8a-7db0-4508-b68e-71e71d878bc7">
 
 Paso 6
 Se entrega el pipeline completo que consta de las siguientes etapas:
