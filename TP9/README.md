@@ -1,4 +1,3 @@
-![image](https://github.com/user-attachments/assets/13338d75-468e-494d-80a9-b9de9841bc61)# Trabajo Práctico 9
 
 ## 1- Desarrollo:
 ### Paso 1
