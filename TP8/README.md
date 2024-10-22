@@ -169,7 +169,7 @@ Se verifica que dentro del recurso ACR anteriormente creado haya al acceder a la
 <img width="1505" alt="Captura de pantalla 2024-10-20 a la(s) 10 05 37" src="https://github.com/user-attachments/assets/c2acfe82-9c24-454b-9d35-308518801afc">
 
 ### Paso 8
-A la etapa anteriormente creada (), se le agrega un nuevo job que permite construir y subir la imagen de frontend de Docker al recurso ACR.
+A la etapa anteriormente creada en el paso 7, se le agrega un nuevo job o tareas que le permite construir y subir la imagen de frontend de Docker al recurso ACR.
 
 ```
 - job: docker_build_and_push_front
@@ -238,14 +238,16 @@ Se agregaron al pipeline las siguientes variables:
 
 ```
   acrName: 'vgingsw3uccacr'
-  ResourceGroupName: 'IngSw3-UCC'
+  ResourceGroupName: 'TPS_INGSOFT3'
   backContainerInstanceNameQA: 'gaggio-crud-api-qa'
   backImageTag: 'latest' 
   container-cpu-api-qa: 1 #CPUS de nuestro container de QA
   container-memory-api-qa: 1.5 #RAM de nuestro container de QA
 ```
 
-Desde la interfaz gráfica de Azure DevOps, se agregó una variable secreta "cnn_string_qa" que contiene la cadena de conexión a la base de datos de Azure. Imagen Paso 9a
+Desde la interfaz gráfica de Azure DevOps, se agregó una variable secreta "cnn_string_qa" que contiene la cadena de conexión a la base de datos de Azure. 
+
+<img width="474" alt="image" src="https://github.com/user-attachments/assets/68ee133b-0187-46f9-a21d-aa85d67be8b0">
 
 Finalmente, se agregó una nueva etapa al pipeline que se encarga de realizar el despliegue de la imagen anteriormente creada en Azure Container Instances, dentro del entorno de QA.
 
@@ -381,7 +383,6 @@ Job creado:
                 --memory $(container-memory-front-qa)
 ```
 
-Además, se creó una nueva variable de entorno mediante la GUI de Azure llamada "api_url_aci_qa" que contiene la URL de la API desplegada en el recurso ACI anteriormente creado.
 
 Luego de ejecutar el pipeline, dentro de Azure Portal se creó un nuevo recurso ACI.
 
@@ -439,6 +440,7 @@ Al ejecutar el pipeline, se observa que el mismo se detiene al iniciar esta etap
 Una vez aprobado el despliegue y finalizada esta etapa, dentro del grupo de recursos en Azure Portal se observa que ambos ACI fueron creados exitosamente.
 
 gaggio-crud-api-prod.eastus.azurecontainer.io/api/Employee/GetAll
+
 Al navegar a la URL provista por el contenedor de Front, se puede ver que los datos cargan correctamente y que los mismos están siendo obtenidos del contenedor PROD.
 
 <img width="822" alt="image" src="https://github.com/user-attachments/assets/bb7e9bae-60de-4065-be8c-d04284ce476b">
