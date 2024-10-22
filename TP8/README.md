@@ -9,8 +9,11 @@
 <img width="565" alt="Captura de pantalla 2024-10-18 a la(s) 18 25 18" src="https://github.com/user-attachments/assets/a40bf8de-f7f8-45e9-a6da-ca1a248c3911">
 <img width="960" alt="Captura de pantalla 2024-10-18 a la(s) 18 31 45" src="https://github.com/user-attachments/assets/e46c3a6e-7d17-4155-b82d-04db2e7304bf">
 <img width="746" alt="Captura de pantalla 2024-10-18 a la(s) 18 32 03" src="https://github.com/user-attachments/assets/60259ebe-ce52-43d1-ac23-31478b5da353">
+<img width="559" alt="image" src="https://github.com/user-attachments/assets/20456412-5f9d-48cc-995f-fd4632574d9a">
+
 <img width="961" alt="Captura de pantalla 2024-10-18 a la(s) 18 32 22" src="https://github.com/user-attachments/assets/f1bfec9e-989f-4092-9f67-1cf92e856d3f">
 <img width="778" alt="Captura de pantalla 2024-10-18 a la(s) 18 32 44" src="https://github.com/user-attachments/assets/cf1d4c57-7572-4f82-a450-2a53ce20cc32">
+<img width="963" alt="Captura de pantalla 2024-10-18 a la(s) 18 33 27" src="https://github.com/user-attachments/assets/d9bc6bb1-da92-491e-bb95-5f0c4c6e9d5f">
 
 
 ### Paso 1
