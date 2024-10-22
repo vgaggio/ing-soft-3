@@ -1,4 +1,3 @@
-<img width="757" alt="image" src="https://github.com/user-attachments/assets/55780b9e-b40a-4c56-b7b0-ee14a0dc8d1a"><img width="757" alt="image" src="https://github.com/user-attachments/assets/8ecfc628-0b61-4876-a540-0638fe772757">
 ## 1- Desarrollo:
 ### Paso 1
 
