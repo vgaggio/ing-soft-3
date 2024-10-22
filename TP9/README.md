@@ -6,7 +6,7 @@ Desarrollo del punto 1.1:
 ### 1.1.1 - Agregar a nuestro pipeline una nueva etapa que dependa de nuestra etapa de Construcción y Pruebas y de la etapa de Construcción de Imagenes Docker y subida a ACR realizada en el TP08
 Agregar tareas para crear un recurso Azure Container Instances que levante un contenedor con nuestra imagen de back utilizando un AppServicePlan en Linux
 
-```text
+ ```text
   #---------------------------------------
   ### STAGE DEPLOY TO AZURE APP SERVICE QA
   #---------------------------------------
