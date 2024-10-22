@@ -262,6 +262,7 @@ Se agrega una nueva etapa que depende de la etapa de despliegue a QA anterior. E
 
 Se muestran los recursos generados a partir de la ejecución de la presente etapa.
 <img width="1511" alt="image" src="https://github.com/user-attachments/assets/36d4cb8a-7db0-4508-b68e-71e71d878bc7">
+<img width="757" alt="image" src="https://github.com/user-attachments/assets/2ff6155d-6565-44d4-b787-c29d9dbf368e">
 
 ### Paso 6
 
