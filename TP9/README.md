@@ -65,7 +65,7 @@ Al ejecutar este job dentro del pipeline, se crea en Azure Portal un nuevo recur
 
 <img width="1505" alt="image" src="https://github.com/user-attachments/assets/ccb8e5a9-e844-475f-ae28-c12bf04e5f32">
 
-Paso 2
+### Paso 2
 Se agrega un nuevo job a la etapa anteriormente creada que permite realizar el despliegue de un contenedor del frontend del proyecto en un Azure App Service.
  ```
 # -------------------------------------------------------------------------------
