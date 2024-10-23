@@ -270,4 +270,4 @@ Se muestran los recursos generados a partir de la ejecución de la presente etap
 
 ### Paso 6
 
-<img width="1130" alt="image" src="https://github.com/user-attachments/assets/10d295ae-b88a-47fe-8542-4bdb16381aa7">
+![image](https://github.com/user-attachments/assets/e3b9a030-0d32-4551-816b-af3eecf74fcc)
