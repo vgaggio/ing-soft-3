@@ -277,3 +277,6 @@ Se muestran los recursos generados a partir de la ejecución de la presente etap
 
 <img width="1512" alt="image" src="https://github.com/user-attachments/assets/6f25adb3-bd24-4b01-a80f-eb7f92e9ac81">
 
+Agregué la condición de publicar los test por mas que fallen luego de la clase del 22/10
+
+<img width="1509" alt="image" src="https://github.com/user-attachments/assets/c4d52fb3-e6de-4d93-930b-541532bf2444">
