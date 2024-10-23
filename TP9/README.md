@@ -1,7 +1,7 @@
 ## 1- Desarrollo:
 ### Paso 1
 
-Se agrega al pipeline una nueva etapa que depende de la etapa de construcción y prueba, y de la etapa de construcción y subida de las imágenes de Docker a ACR. Inicialmente, esta etapa crea un nuevo contenedor utilizando la imagen de la API y lo despliega en un Azure App Service, para lo cual se requiere un App Service Plan de Linux.
+Se añade una nueva etapa al pipeline, la cual depende tanto de la fase de construcción y pruebas como de la fase de construcción y carga de las imágenes Docker en ACR. En esta etapa, se inicia un contenedor utilizando la imagen de la API y se despliega en un Azure App Service, para lo cual es necesario contar con un App Service Plan basado en Linux.
 
 
 
@@ -269,5 +269,215 @@ Se muestran los recursos generados a partir de la ejecución de la presente etap
 
 
 ### Paso 6
+<img width="1190" alt="image" src="https://github.com/user-attachments/assets/f2199f10-4126-41bd-ba72-d70af9533809">
+<img width="1190" alt="image" src="https://github.com/user-attachments/assets/57d3c1ae-e5bd-4eb1-943a-0bc5d20a2217">
 
 ![image](https://github.com/user-attachments/assets/e3b9a030-0d32-4551-816b-af3eecf74fcc)
+
+
+ ```
+trigger:
+- main
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: '**/*.sln'
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+  frontPath: './EmployeeCrudAngular'
+  ConnectedServiceName: 'ServiceConnectionARM'
+  acrLoginServer: 'vgingsoft3uccacr.azurecr.io'
+  backImageName: 'employee-crud-api'
+  frontImageName: 'employee-crud-angular'
+  container-cpu-api-qa: 1
+  container-memory-api-qa: 1.5  
+  acrName: 'VGIngSoft3UCCACR'
+  ResourceGroupName: 'TPS_INGSOFT3'
+  backContainerInstanceNameQA: 'gaggio-crud-api-qa'
+  backImageTag: 'latest' 
+  WebAppApiNameContainersQA: 'gaggio-crud-api-qa'
+
+# Azure App Services
+  AppServicePlanLinux: 'LinuxAppPlan01'
+
+  # API (QA)
+  backAppServiceQA: 'gaggio-as-crud-api-qa'
+  api_url_as_qa: 'https://$(backAppServiceQA).azurewebsites.net/api/Employee'
+
+  # FRONT (QA)
+  frontAppServiceQA: 'gaggio-as-crud-front-qa'
+  front_url_as_qa: 'https://$(frontAppServiceQA).azurewebsites.net'
+
+  # API (Prod)
+  backAppServiceProd: 'gaggio-as-crud-api-prod'
+  api_url_as_prod: 'https://$(backAppServiceProd).azurewebsites.net/api/Employee'
+
+  # FRONT (Prod)
+  frontAppServiceProd: 'gaggio-as-crud-front-prod'
+  front_url_as_prod: 'https://$(frontAppServiceProd).azurewebsites.net'
+  
+stages:
+- stage: BuildAndTest
+  displayName: "Build del backend y frontend"
+  jobs:
+  - job: BuildDotnet
+    displayName: "Compilar y probar API"
+    pool:
+      vmImage: 'windows-latest'
+    steps:
+      - checkout: self
+      - task: DotNetCoreCLI@2
+        displayName: 'Restaurar paquetes NuGet'
+        inputs:
+          command: restore
+          projects: '$(solution)'
+      - task: DotNetCoreCLI@2
+        displayName: 'Ejecutar pruebas API'
+        inputs:
+          command: 'test'
+          projects: '**/*.Tests.csproj'
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publicar artefactos API'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: $(backDrop)
+
+  - job: BuildAngular
+    displayName: "Construir y probar frontend"
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - checkout: self
+      - task: NodeTool@0
+        displayName: 'Instalar Node.js'
+        inputs:
+          versionSpec: '16.x'
+      - script: npm install
+        displayName: 'Instalar dependencias'
+        workingDirectory: $(frontPath)
+      - script: npm run build -- --prod
+        displayName: 'Construir frontend'
+        workingDirectory: $(frontPath)
+      - task: PublishBuildArtifacts@1
+        displayName: 'Publicar artefactos frontend'
+        inputs:
+          PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+          ArtifactName: $(frontDrop)
+
+- stage: DockerBuildAndPush
+  displayName: 'Construir y Subir Imágenes Docker'
+  dependsOn: BuildAndTest
+  jobs:
+  - job: BuildAndPushAPI
+    displayName: 'Desplegar Imagen API en ACR'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - checkout: self
+      - task: Docker@2
+        displayName: 'Construir imagen Docker API'
+        inputs:
+          command: build
+          repository: $(acrLoginServer)/$(backImageName)
+          dockerfile: 'docker/api/Dockerfile'
+          buildContext: '$(Pipeline.Workspace)/api'
+          tags: 'latest'
+      - task: Docker@2
+        displayName: 'Subir imagen Docker API'
+        inputs:
+          command: push
+          repository: $(acrLoginServer)/$(backImageName)
+          tags: 'latest'
+
+  - job: BuildAndPushFrontend
+    displayName: 'Desplegar Imagen Frontend en ACR'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - checkout: self
+      - task: Docker@2
+        displayName: 'Construir imagen Docker frontend'
+        inputs:
+          command: build
+          repository: $(acrLoginServer)/$(frontImageName)
+          dockerfile: 'docker/front/Dockerfile'
+          buildContext: '$(Pipeline.Workspace)/frontend'
+          tags: 'latest'
+      - task: Docker@2
+        displayName: 'Subir imagen Docker frontend'
+        inputs:
+          command: push
+          repository: $(acrLoginServer)/$(frontImageName)
+          tags: 'latest'
+
+- stage: DeployToACIQA
+  displayName: 'Desplegar en Azure Container Instances QA'
+  dependsOn: DockerBuildAndPush
+  jobs:
+  - job: DeployAPIToACIQA
+    displayName: 'Desplegar Imagen API en ACI QA'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: AzureCLI@2
+        displayName: 'Deploy Docker Image API'
+        inputs:
+          azureSubscription: '$(ConnectedServiceName)'
+          scriptType: bash
+          inlineScript: |
+            az container create --resource-group $(ResourceGroupName) \
+              --name $(backContainerInstanceNameQA) \
+              --image $(acrLoginServer)/$(backImageName):latest \
+              --cpu 1 --memory 1.5 --dns-name-label $(backContainerInstanceNameQA) --ports 80
+
+  - job: DeployFrontendToACIQA
+    displayName: 'Desplegar Imagen Frontend en ACI QA'
+    pool:
+      vmImage: 'ubuntu-latest'
+    steps:
+      - task: AzureCLI@2
+        displayName: 'Deploy Docker Image Frontend'
+        inputs:
+          azureSubscription: '$(ConnectedServiceName)'
+          scriptType: bash
+          inlineScript: |
+            az container create --resource-group $(ResourceGroupName) \
+              --name $(frontContainerInstanceNameQA) \
+              --image $(acrLoginServer)/$(frontImageName):latest \
+              --cpu 1 --memory 1.5 --dns-name-label $(frontContainerInstanceNameQA) --ports 80
+
+- stage: DeployToWebAppProd
+  displayName: 'Desplegar en Azure Web Apps Prod'
+  dependsOn: DeployToACIQA
+  jobs:
+  - deployment: DeployAPIToProd
+    displayName: 'Desplegar Backend en Azure Web App Prod'
+    environment: 'prod'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - task: AzureRmWebAppDeployment@4
+              displayName: 'Deploy API to Azure Web App'
+              inputs:
+                azureSubscription: 'Azure subscription 1'
+                WebAppName: $(backWebAppNameProd)
+                packageForLinux: '$(System.ArtifactsDirectory)/api/**/*.zip'
+
+  - deployment: DeployFrontendToProd
+    displayName: 'Desplegar Frontend en Azure Web App Prod'
+    environment: 'prod'
+    strategy:
+      runOnce:
+        deploy:
+          steps:
+            - task: AzureRmWebAppDeployment@4
+              displayName: 'Deploy Frontend to Azure Web App'
+              inputs:
+                azureSubscription: 'Azure subscription 1'
+                WebAppName: $(frontWebAppNameProd)
+                packageForLinux: '$(System.ArtifactsDirectory)/frontend'
+
+ ```
