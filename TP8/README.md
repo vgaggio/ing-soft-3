@@ -441,6 +441,8 @@ Una vez aprobado el despliegue y finalizada esta etapa, dentro del grupo de recu
 
 gaggio-crud-api-prod.eastus.azurecontainer.io/api/Employee/GetAll
 
+<img width="809" alt="image" src="https://github.com/user-attachments/assets/8d85bfa4-1478-4b0b-bf6a-9b6afe516cea">
+
 Al navegar a la URL provista por el contenedor de Front, se puede ver que los datos cargan correctamente y que los mismos están siendo obtenidos del contenedor PROD.
 
 <img width="822" alt="image" src="https://github.com/user-attachments/assets/bb7e9bae-60de-4065-be8c-d04284ce476b">
